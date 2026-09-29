@@ -1,0 +1,200 @@
+{% extends "base_report.html" %}
+
+{% block content %}
+<!-- ========================================================================
+     PAGE 1: COVER
+     ======================================================================== -->
+<div class="report-cover">
+  <div class="cover-header">
+    <div class="cover-logo">
+      <div class="cover-brand">STATEFLUX</div>
+      <div class="cover-badge">EXECUTIVE INTELLIGENCE</div>
+    </div>
+    <div class="cover-tagline">IPsec Security Change-Impact Intelligence</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-doc-type">EXECUTIVE SECURITY POSTURE REPORT</div>
+    <h1 class="cover-title">ENTERPRISE IPsec FLEET CRYPTOGRAPHIC POSTURE</h1>
+    <div class="cover-subtitle">
+      Executive synthesis of fleet cryptographic compliance, dormant downgrade vulnerabilities, change risk exposure, and strategic migration priorities.
+    </div>
+
+    <div class="cover-metadata-grid">
+      <div class="cover-meta-item">
+        <div class="meta-label">Generated Date</div>
+        <div class="meta-val">{{ report.generated_at.strftime('%d %B %Y') }}</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="meta-label">Report Identifier</div>
+        <div class="meta-val"><code>{{ report.report_id }}</code></div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="meta-label">Assessed Fleet Scope</div>
+        <div class="meta-val">{{ report.total_tunnels }} IPsec Tunnels &bull; 20 Gateway Endpoints</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="meta-label">Overall Fleet Posture</div>
+        <div class="meta-val" style="color: {% if report.fleet_posture in ['CRITICAL', 'DEGRADED'] %}var(--color-danger){% else %}var(--color-success){% endif %}; font-weight: 800;">
+          {{ report.fleet_posture }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="confidentiality-notice">EXECUTIVE SUMMARY &bull; C-LEVEL &amp; CISO BRIEFING</div>
+    <div>Document Version 1.0</div>
+  </div>
+</div>
+
+<!-- ========================================================================
+     PAGE 2: EXECUTIVE SUMMARY & FLEET METRICS
+     ======================================================================== -->
+<div class="page-break"></div>
+
+<div class="report-running-header">
+  <span class="brand">STATEFLUX</span>
+  <span>IPsec Security Change-Impact Intelligence</span>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">1.</span> Executive Summary &amp; Posture Assessment</h2>
+  
+  <div class="exec-summary-box">
+    <div class="box-title">CISO Strategic Overview</div>
+    <p>
+      {{ report.ai_executive_summary }}
+    </p>
+    
+    <div class="exec-grid">
+      <div class="exec-grid-item">
+        <div class="k">Evaluated Tunnels</div>
+        <div class="v">{{ report.total_tunnels }} Active IPsec Tunnels</div>
+      </div>
+      <div class="exec-grid-item">
+        <div class="k">Suite-B Compliant</div>
+        <div class="v" style="color: var(--color-success);">{{ report.compliant_tunnels }} of {{ report.total_tunnels }} ({{ ((report.compliant_tunnels / report.total_tunnels) * 100) | round }}%)</div>
+      </div>
+      <div class="exec-grid-item">
+        <div class="k">Critical Exposures</div>
+        <div class="v" style="color: var(--color-danger);">{{ report.tunnels_with_critical_exposure }} Tunnels</div>
+      </div>
+      <div class="exec-grid-item">
+        <div class="k">Weak Floor Exposure</div>
+        <div class="v" style="color: var(--color-warning);">{{ report.weak_floor_exposure_count }} Tunnels (Downgrade Risk)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">2.</span> Fleet Cryptographic Health Snapshot</h2>
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="stat-val val-accent">{{ report.total_tunnels }}</div>
+      <div class="stat-label">Total Tunnels</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-green">{{ report.compliant_tunnels }}</div>
+      <div class="stat-label">Compliant</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-amber">{{ report.weak_floor_exposure_count }}</div>
+      <div class="stat-label">Weak Floors</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-red">{{ report.tunnels_with_critical_exposure }}</div>
+      <div class="stat-label">Critical Risks</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-amber">{{ report.latent_failure_candidates }}</div>
+      <div class="stat-label">Latent Risks</div>
+    </div>
+  </div>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">3.</span> Major Risks &amp; Vulnerabilities</h2>
+  <p>
+    The highest-priority security risks identified across the enterprise network include legacy fallback exposures and dormant downgrade paths:
+  </p>
+  <div class="table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Finding ID</th>
+          <th>Risk Title</th>
+          <th>Severity</th>
+          <th>Affected Scope</th>
+          <th>Remediation Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for f in report.key_executive_findings %}
+        <tr>
+          <td><code>{{ f.finding_id }}</code></td>
+          <td style="font-weight: 600; color: #0f172a;">{{ f.title }}</td>
+          <td>
+            <span class="badge {% if f.severity == 'CRITICAL' %}badge-red{% elif f.severity == 'HIGH' %}badge-amber{% else %}badge-blue{% endif %}">
+              {{ f.severity }}
+            </span>
+          </td>
+          <td>{{ f.affected_tunnels | length }} Tunnels</td>
+          <td style="font-size: 7.5pt;">{{ f.remediation }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="report-running-footer">
+  <span>EXECUTIVE SECURITY POSTURE REPORT &bull; {{ report.report_id }}</span>
+  <span>Page 2 of 3</span>
+</div>
+
+<!-- ========================================================================
+     PAGE 3: RECOMMENDATIONS & CONFIDENCE
+     ======================================================================== -->
+<div class="page-break"></div>
+
+<div class="report-running-header">
+  <span class="brand">STATEFLUX</span>
+  <span>IPsec Security Change-Impact Intelligence</span>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">4.</span> Strategic Executive Recommendations</h2>
+  <div class="exec-summary-box">
+    <div class="box-title">Prioritized Action Items</div>
+    <ul style="padding-left: 18px; font-size: 9pt; color: #334155; line-height: 1.65;">
+      {% for rec in report.strategic_recommendations %}
+      <li><strong>Priority {{ loop.index }}:</strong> {{ rec }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">5.</span> Change Impact &amp; Migration Risk Assessment</h2>
+  <p>
+    Applying immediate fleet-wide cipher pruning without staging carries high operational risk. Pre-migration configuration updates must be deployed to branch endpoints to eliminate immediate incompatibilities, followed by canary-wave validation over a minimum of two cryptographic rekey cycles.
+  </p>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">6.</span> Decision Confidence &amp; Assurance Statement</h2>
+  <div class="exec-summary-box" style="border-left-color: #0284c7;">
+    <div class="box-title">Assurance Level: {{ report.overall_confidence }}</div>
+    <p style="font-size: 8.5pt;">
+      This assessment is synthesized deterministically from active cryptographic configurations, verified IKE negotiation matrices, and real-IPsec testbed validations. Findings do not rely on probabilistic estimates.
+    </p>
+  </div>
+</div>
+
+<div class="report-running-footer">
+  <span>EXECUTIVE SECURITY POSTURE REPORT &bull; {{ report.report_id }}</span>
+  <span>Page 3 of 3</span>
+</div>
+{% endblock %}

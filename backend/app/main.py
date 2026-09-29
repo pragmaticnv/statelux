@@ -154,9 +154,11 @@ def create_app() -> FastAPI:
     from fastapi.staticfiles import StaticFiles
 
     candidates = [
+        Path(__file__).resolve().parent / "frontend",
         Path(__file__).resolve().parent.parent.parent / "frontend",
         Path.cwd() / "frontend",
         Path("/var/task/frontend"),
+        Path("/var/task/backend/app/frontend"),
     ]
     frontend_dir = next((c for c in candidates if c.exists()), candidates[0])
     if frontend_dir.exists():

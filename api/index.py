@@ -24,8 +24,10 @@ from app.services.data_loader import load_dataset, _current_dataset
 # Serverless cold-start initialization: ensure dataset is loaded immediately
 if not _current_dataset.is_loaded:
     candidates = [
+        BACKEND_DIR / "app" / "data" / "seed",
         PROJECT_ROOT / "data" / "seed",
         Path.cwd() / "data" / "seed",
+        Path("/var/task/backend/app/data/seed"),
         Path("/var/task/data/seed"),
     ]
     for c in candidates:

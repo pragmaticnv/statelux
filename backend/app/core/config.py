@@ -17,7 +17,12 @@ def _project_root() -> Path:
     if (candidate / "data" / "seed").exists():
         return candidate
 
-    # Candidate 2: Current working directory
+    # Candidate 2: backend/app directory
+    app_dir = Path(__file__).resolve().parent.parent
+    if (app_dir / "data" / "seed").exists():
+        return app_dir
+
+    # Candidate 3: Current working directory
     cwd = Path.cwd()
     if (cwd / "data" / "seed").exists():
         return cwd

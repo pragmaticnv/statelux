@@ -1,0 +1,1162 @@
+[
+  {
+    "endpoint_id": "ep-001",
+    "fleet_id": "fleet-001",
+    "name": "HUB-HS-01",
+    "platform": "strongSwan",
+    "platform_version": "5.9.14",
+    "profile_type": "HIGH_SECURITY",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-384",
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        20,
+        21
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-001-ike-01",
+        "ep-001-ike-02"
+      ],
+      "esp_proposals": [
+        "ep-001-esp-01",
+        "ep-001-esp-02"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "HQ",
+      "role": "hub"
+    }
+  },
+  {
+    "endpoint_id": "ep-002",
+    "fleet_id": "fleet-001",
+    "name": "HUB-HS-02",
+    "platform": "strongSwan",
+    "platform_version": "5.9.14",
+    "profile_type": "HIGH_SECURITY",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-384",
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        20,
+        21
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-002-ike-01",
+        "ep-002-ike-02"
+      ],
+      "esp_proposals": [
+        "ep-002-esp-01",
+        "ep-002-esp-02"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "HQ",
+      "role": "hub"
+    }
+  },
+  {
+    "endpoint_id": "ep-003",
+    "fleet_id": "fleet-001",
+    "name": "HUB-HS-03",
+    "platform": "strongSwan",
+    "platform_version": "5.9.14",
+    "profile_type": "HIGH_SECURITY",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-384",
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        20,
+        21
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-003-ike-01",
+        "ep-003-ike-02"
+      ],
+      "esp_proposals": [
+        "ep-003-esp-01",
+        "ep-003-esp-02"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "HQ",
+      "role": "hub"
+    }
+  },
+  {
+    "endpoint_id": "ep-004",
+    "fleet_id": "fleet-001",
+    "name": "REGIONAL-GW-01",
+    "platform": "Libreswan",
+    "platform_version": "4.12",
+    "profile_type": "MODERN_STRONG",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-384",
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-004-ike-01",
+        "ep-004-ike-02",
+        "ep-004-ike-03",
+        "ep-004-ike-04"
+      ],
+      "esp_proposals": [
+        "ep-004-esp-01",
+        "ep-004-esp-02",
+        "ep-004-esp-03",
+        "ep-004-esp-04"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "REGION-1",
+      "role": "spoke"
+    }
+  },
+  {
+    "endpoint_id": "ep-005",
+    "fleet_id": "fleet-001",
+    "name": "REGIONAL-GW-02",
+    "platform": "Libreswan",
+    "platform_version": "4.12",
+    "profile_type": "MODERN_STRONG",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-384",
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-005-ike-01",
+        "ep-005-ike-02",
+        "ep-005-ike-03",
+        "ep-005-ike-04"
+      ],
+      "esp_proposals": [
+        "ep-005-esp-01",
+        "ep-005-esp-02",
+        "ep-005-esp-03",
+        "ep-005-esp-04"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "REGION-2",
+      "role": "spoke"
+    }
+  },
+  {
+    "endpoint_id": "ep-006",
+    "fleet_id": "fleet-001",
+    "name": "REGIONAL-GW-03",
+    "platform": "Libreswan",
+    "platform_version": "4.12",
+    "profile_type": "MODERN_STRONG",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-384",
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-006-ike-01",
+        "ep-006-ike-02",
+        "ep-006-ike-03",
+        "ep-006-ike-04"
+      ],
+      "esp_proposals": [
+        "ep-006-esp-01",
+        "ep-006-esp-02",
+        "ep-006-esp-03",
+        "ep-006-esp-04"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "REGION-3",
+      "role": "spoke"
+    }
+  },
+  {
+    "endpoint_id": "ep-007",
+    "fleet_id": "fleet-001",
+    "name": "SITE-ENT-01",
+    "platform": "strongSwan",
+    "platform_version": "5.9.14",
+    "profile_type": "ENTERPRISE",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC",
+        "AES-128-GCM",
+        "AES-128-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-256",
+        "HMAC-SHA-1"
+      ],
+      "dh_groups": [
+        14,
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-007-ike-01",
+        "ep-007-ike-02",
+        "ep-007-ike-03",
+        "ep-007-ike-04",
+        "ep-007-ike-05",
+        "ep-007-ike-06"
+      ],
+      "esp_proposals": [
+        "ep-007-esp-01",
+        "ep-007-esp-02",
+        "ep-007-esp-03",
+        "ep-007-esp-04",
+        "ep-007-esp-05",
+        "ep-007-esp-06"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "SITE-1",
+      "role": "spoke"
+    }
+  },
+  {
+    "endpoint_id": "ep-008",
+    "fleet_id": "fleet-001",
+    "name": "SITE-ENT-02",
+    "platform": "strongSwan",
+    "platform_version": "5.9.14",
+    "profile_type": "ENTERPRISE",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC",
+        "AES-128-GCM",
+        "AES-128-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-256",
+        "HMAC-SHA-1"
+      ],
+      "dh_groups": [
+        14,
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-008-ike-01",
+        "ep-008-ike-02",
+        "ep-008-ike-03",
+        "ep-008-ike-04",
+        "ep-008-ike-05",
+        "ep-008-ike-06"
+      ],
+      "esp_proposals": [
+        "ep-008-esp-01",
+        "ep-008-esp-02",
+        "ep-008-esp-03",
+        "ep-008-esp-04",
+        "ep-008-esp-05",
+        "ep-008-esp-06"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "SITE-2",
+      "role": "spoke"
+    }
+  },
+  {
+    "endpoint_id": "ep-009",
+    "fleet_id": "fleet-001",
+    "name": "SITE-ENT-03",
+    "platform": "strongSwan",
+    "platform_version": "5.9.14",
+    "profile_type": "ENTERPRISE",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC",
+        "AES-128-GCM",
+        "AES-128-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-256",
+        "HMAC-SHA-1"
+      ],
+      "dh_groups": [
+        14,
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-009-ike-01",
+        "ep-009-ike-02",
+        "ep-009-ike-03",
+        "ep-009-ike-04",
+        "ep-009-ike-05",
+        "ep-009-ike-06"
+      ],
+      "esp_proposals": [
+        "ep-009-esp-01",
+        "ep-009-esp-02",
+        "ep-009-esp-03",
+        "ep-009-esp-04",
+        "ep-009-esp-05",
+        "ep-009-esp-06"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "SITE-3",
+      "role": "spoke"
+    }
+  },
+  {
+    "endpoint_id": "ep-010",
+    "fleet_id": "fleet-001",
+    "name": "SITE-WIDE-01",
+    "platform": "strongSwan",
+    "platform_version": "5.9.6",
+    "profile_type": "ENTERPRISE",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC",
+        "AES-128-CBC",
+        "3DES"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-256",
+        "HMAC-SHA-1"
+      ],
+      "dh_groups": [
+        14,
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-010-ike-01",
+        "ep-010-ike-02",
+        "ep-010-ike-03",
+        "ep-010-ike-04",
+        "ep-010-ike-05"
+      ],
+      "esp_proposals": [
+        "ep-010-esp-01",
+        "ep-010-esp-02",
+        "ep-010-esp-03",
+        "ep-010-esp-04",
+        "ep-010-esp-05"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "LEGACY-SITE-1",
+      "role": "spoke",
+      "scenario": "S03/HERO",
+      "has_weak_fallback": "true"
+    }
+  },
+  {
+    "endpoint_id": "ep-011",
+    "fleet_id": "fleet-001",
+    "name": "SITE-WIDE-02",
+    "platform": "strongSwan",
+    "platform_version": "5.9.6",
+    "profile_type": "ENTERPRISE",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC",
+        "AES-128-CBC",
+        "3DES"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-256",
+        "HMAC-SHA-1"
+      ],
+      "dh_groups": [
+        14,
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-011-ike-01",
+        "ep-011-ike-02",
+        "ep-011-ike-03",
+        "ep-011-ike-04",
+        "ep-011-ike-05"
+      ],
+      "esp_proposals": [
+        "ep-011-esp-01",
+        "ep-011-esp-02",
+        "ep-011-esp-03",
+        "ep-011-esp-04",
+        "ep-011-esp-05"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "LEGACY-SITE-2",
+      "role": "spoke",
+      "scenario": "S03/HERO",
+      "has_weak_fallback": "true"
+    }
+  },
+  {
+    "endpoint_id": "ep-012",
+    "fleet_id": "fleet-001",
+    "name": "LEGACY-GW-01",
+    "platform": "Legacy-Gateway",
+    "platform_version": "2.6.37",
+    "profile_type": "LEGACY",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv1",
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-128-CBC",
+        "3DES"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-256",
+        "HMAC-SHA-1"
+      ],
+      "dh_groups": [
+        14
+      ],
+      "pfs_supported": false,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-012-ike-01",
+        "ep-012-ike-02",
+        "ep-012-ike-03",
+        "ep-012-ike-04"
+      ],
+      "esp_proposals": [
+        "ep-012-esp-01",
+        "ep-012-esp-02",
+        "ep-012-esp-03"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 28800,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "LEGACY-1",
+      "role": "spoke",
+      "upgrade_priority": "HIGH"
+    }
+  },
+  {
+    "endpoint_id": "ep-013",
+    "fleet_id": "fleet-001",
+    "name": "LEGACY-GW-02",
+    "platform": "Legacy-Gateway",
+    "platform_version": "2.6.37",
+    "profile_type": "LEGACY",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv1",
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-128-CBC",
+        "3DES"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-256",
+        "HMAC-SHA-1"
+      ],
+      "dh_groups": [
+        14
+      ],
+      "pfs_supported": false,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-013-ike-01",
+        "ep-013-ike-02",
+        "ep-013-ike-03",
+        "ep-013-ike-04"
+      ],
+      "esp_proposals": [
+        "ep-013-esp-01",
+        "ep-013-esp-02",
+        "ep-013-esp-03"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 28800,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "LEGACY-2",
+      "role": "spoke",
+      "upgrade_priority": "HIGH"
+    }
+  },
+  {
+    "endpoint_id": "ep-014",
+    "fleet_id": "fleet-001",
+    "name": "LEGACY-GW-03",
+    "platform": "Legacy-Gateway",
+    "platform_version": "2.6.37",
+    "profile_type": "LEGACY",
+    "validation_status": "VALIDATED",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv1",
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-128-CBC",
+        "3DES"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-256",
+        "HMAC-SHA-1"
+      ],
+      "dh_groups": [
+        14
+      ],
+      "pfs_supported": false,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-014-ike-01",
+        "ep-014-ike-02",
+        "ep-014-ike-03",
+        "ep-014-ike-04"
+      ],
+      "esp_proposals": [
+        "ep-014-esp-01",
+        "ep-014-esp-02",
+        "ep-014-esp-03"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 28800,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "LEGACY-3",
+      "role": "spoke",
+      "upgrade_priority": "HIGH"
+    }
+  },
+  {
+    "endpoint_id": "ep-015",
+    "fleet_id": "fleet-001",
+    "name": "VENDOR-A-GW-01",
+    "platform": "Synthetic-Vendor-A",
+    "platform_version": "UNKNOWN",
+    "profile_type": "RESTRICTED",
+    "validation_status": "UNVALIDATED_PROFILE",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        14,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-015-ike-01",
+        "ep-015-ike-02",
+        "ep-015-ike-03"
+      ],
+      "esp_proposals": [
+        "ep-015-esp-01",
+        "ep-015-esp-02",
+        "ep-015-esp-03"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "scenario": "RESTRICTED",
+      "data_completeness": "FULL"
+    }
+  },
+  {
+    "endpoint_id": "ep-016",
+    "fleet_id": "fleet-001",
+    "name": "VENDOR-A-GW-02",
+    "platform": "Synthetic-Vendor-A",
+    "platform_version": "UNKNOWN",
+    "profile_type": "RESTRICTED",
+    "validation_status": "UNVALIDATED_PROFILE",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        14,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-016-ike-01",
+        "ep-016-ike-02",
+        "ep-016-ike-03"
+      ],
+      "esp_proposals": [
+        "ep-016-esp-01",
+        "ep-016-esp-02",
+        "ep-016-esp-03"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "scenario": "RESTRICTED",
+      "data_completeness": "FULL"
+    }
+  },
+  {
+    "endpoint_id": "ep-017",
+    "fleet_id": "fleet-001",
+    "name": "VENDOR-A-GW-03",
+    "platform": "Synthetic-Vendor-A",
+    "platform_version": "UNKNOWN",
+    "profile_type": "RESTRICTED",
+    "validation_status": "UNVALIDATED_PROFILE",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        14,
+        20
+      ],
+      "pfs_supported": false,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-017-ike-01",
+        "ep-017-ike-02",
+        "ep-017-ike-03"
+      ],
+      "esp_proposals": [
+        "ep-017-esp-01",
+        "ep-017-esp-02",
+        "ep-017-esp-03"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "scenario": "S12",
+      "data_completeness": "PARTIAL"
+    }
+  },
+  {
+    "endpoint_id": "ep-018",
+    "fleet_id": "fleet-001",
+    "name": "VENDOR-B-GW-01",
+    "platform": "Synthetic-Vendor-B",
+    "platform_version": "3.1.0",
+    "profile_type": "ENTERPRISE",
+    "validation_status": "UNVALIDATED_PROFILE",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        14,
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-018-ike-01",
+        "ep-018-ike-02",
+        "ep-018-ike-03",
+        "ep-018-ike-04"
+      ],
+      "esp_proposals": [
+        "ep-018-esp-01",
+        "ep-018-esp-02",
+        "ep-018-esp-03",
+        "ep-018-esp-04"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "VENDOR-B-REGION-1"
+    }
+  },
+  {
+    "endpoint_id": "ep-019",
+    "fleet_id": "fleet-001",
+    "name": "VENDOR-B-GW-02",
+    "platform": "Synthetic-Vendor-B",
+    "platform_version": "3.1.0",
+    "profile_type": "ENTERPRISE",
+    "validation_status": "UNVALIDATED_PROFILE",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        14,
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-019-ike-01",
+        "ep-019-ike-02",
+        "ep-019-ike-03",
+        "ep-019-ike-04"
+      ],
+      "esp_proposals": [
+        "ep-019-esp-01",
+        "ep-019-esp-02",
+        "ep-019-esp-03",
+        "ep-019-esp-04"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "VENDOR-B-REGION-2"
+    }
+  },
+  {
+    "endpoint_id": "ep-020",
+    "fleet_id": "fleet-001",
+    "name": "VENDOR-B-GW-03",
+    "platform": "Synthetic-Vendor-B",
+    "platform_version": "3.1.0",
+    "profile_type": "ENTERPRISE",
+    "validation_status": "UNVALIDATED_PROFILE",
+    "capabilities": {
+      "ike_versions": [
+        "IKEv2"
+      ],
+      "encryption_algorithms": [
+        "AES-256-GCM",
+        "AES-256-CBC"
+      ],
+      "integrity_algorithms": [
+        "HMAC-SHA-512",
+        "HMAC-SHA-256"
+      ],
+      "dh_groups": [
+        14,
+        19,
+        20
+      ],
+      "pfs_supported": true,
+      "replay_protection_supported": true
+    },
+    "configuration": {
+      "ike_proposals": [
+        "ep-020-ike-01",
+        "ep-020-ike-02",
+        "ep-020-ike-03",
+        "ep-020-ike-04"
+      ],
+      "esp_proposals": [
+        "ep-020-esp-01",
+        "ep-020-esp-02",
+        "ep-020-esp-03",
+        "ep-020-esp-04"
+      ],
+      "selection_preference": "ORDERED_PRIORITY"
+    },
+    "network": {
+      "ip_versions": [
+        "IPv4"
+      ],
+      "mtu": 1500
+    },
+    "rekey": {
+      "ike_lifetime": 86400,
+      "child_sa_lifetime": 3600
+    },
+    "annotations": {
+      "region": "VENDOR-B-REGION-3"
+    }
+  }
+]

@@ -1,0 +1,623 @@
+[
+  {
+    "tunnel_id": "tn-001",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-001",
+    "endpoint_b": "ep-004",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-001",
+    "security_state_id": "ss-001",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S01",
+      "label": "Fully Secure"
+    }
+  },
+  {
+    "tunnel_id": "tn-002",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-002",
+    "endpoint_b": "ep-003",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-002",
+    "security_state_id": "ss-002",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S01",
+      "label": "Fully Secure (High-Sec Hub)"
+    }
+  },
+  {
+    "tunnel_id": "tn-003",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-012",
+    "endpoint_b": "ep-013",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-003",
+    "security_state_id": "ss-003",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S02",
+      "label": "Weak Selected Suite",
+      "upgrade_required": "IMMEDIATE"
+    }
+  },
+  {
+    "tunnel_id": "tn-004",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-013",
+    "endpoint_b": "ep-014",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-004",
+    "security_state_id": "ss-004",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S02",
+      "label": "Weak Selected Suite (AES-128)"
+    }
+  },
+  {
+    "tunnel_id": "tn-005",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-010",
+    "endpoint_b": "ep-011",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-005",
+    "security_state_id": "ss-005",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S03",
+      "label": "Strong Selected + Weak Floor",
+      "floor_gap": "SEVERE",
+      "stateflux_highlight": "SECURITY_FLOOR_GAP"
+    }
+  },
+  {
+    "tunnel_id": "tn-006",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-007",
+    "endpoint_b": "ep-011",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-006",
+    "security_state_id": "ss-006",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S03",
+      "label": "Enterprise Strong + Weak Floor"
+    }
+  },
+  {
+    "tunnel_id": "tn-007",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-001",
+    "endpoint_b": "ep-012",
+    "mode": "TUNNEL",
+    "status": "DOWN",
+    "negotiation_id": "neg-007",
+    "security_state_id": "ss-007",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S04",
+      "label": "PFS Mismatch — Tunnel DOWN",
+      "failure_mode": "PFS_MISMATCH"
+    }
+  },
+  {
+    "tunnel_id": "tn-008",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-004",
+    "endpoint_b": "ep-014",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-008",
+    "security_state_id": "ss-008",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S04",
+      "label": "PFS Degraded (no PFS on remote)"
+    }
+  },
+  {
+    "tunnel_id": "tn-009",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-003",
+    "endpoint_b": "ep-012",
+    "mode": "TUNNEL",
+    "status": "DOWN",
+    "negotiation_id": "neg-009",
+    "security_state_id": "ss-009",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S05",
+      "label": "DH Incompatibility → Failure",
+      "failure_mode": "DH_AND_ENCRYPTION_MISMATCH"
+    }
+  },
+  {
+    "tunnel_id": "tn-010",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-005",
+    "endpoint_b": "ep-014",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-010",
+    "security_state_id": "ss-010",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S05",
+      "label": "DH Degraded (forced to DH14)"
+    }
+  },
+  {
+    "tunnel_id": "tn-011",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-001",
+    "endpoint_b": "ep-013",
+    "mode": "TUNNEL",
+    "status": "DOWN",
+    "negotiation_id": "neg-011",
+    "security_state_id": "ss-011",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S06",
+      "label": "Encryption Incompatibility → Failure",
+      "failure_mode": "ENCRYPTION_MISMATCH"
+    }
+  },
+  {
+    "tunnel_id": "tn-012",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-006",
+    "endpoint_b": "ep-014",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-012",
+    "security_state_id": "ss-012",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S06",
+      "label": "Encryption Downgraded (partial compat)"
+    }
+  },
+  {
+    "tunnel_id": "tn-013",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-010",
+    "endpoint_b": "ep-012",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-013",
+    "security_state_id": "ss-013",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S07",
+      "label": "Latent Rekey Failure",
+      "latent_rekey_risk": "TRUE",
+      "stateflux_highlight": "LATENT_REKEY_FAILURE_CANDIDATE",
+      "will_fail_after_hardening": "TRUE"
+    }
+  },
+  {
+    "tunnel_id": "tn-014",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-011",
+    "endpoint_b": "ep-013",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-014",
+    "security_state_id": "ss-014",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S07",
+      "label": "Latent Rekey Failure (site-to-legacy)",
+      "latent_rekey_risk": "TRUE"
+    }
+  },
+  {
+    "tunnel_id": "tn-015",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-007",
+    "endpoint_b": "ep-008",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-015",
+    "security_state_id": "ss-015",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S08",
+      "label": "Policy Compliant"
+    }
+  },
+  {
+    "tunnel_id": "tn-016",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-018",
+    "endpoint_b": "ep-019",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-016",
+    "security_state_id": "ss-016",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S08",
+      "label": "Policy Compliant (Vendor-B pair)"
+    }
+  },
+  {
+    "tunnel_id": "tn-017",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-012",
+    "endpoint_b": "ep-014",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-017",
+    "security_state_id": "ss-017",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S09",
+      "label": "Policy Violation — IKEv1+SHA-1",
+      "policy_violations": "IKEv1,AES-128,SHA-1,PFS_OFF"
+    }
+  },
+  {
+    "tunnel_id": "tn-018",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-013",
+    "endpoint_b": "ep-012",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-018",
+    "security_state_id": "ss-018",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S09",
+      "label": "Policy Violation — IKEv1+3DES (CRITICAL)",
+      "policy_violations": "IKEv1,3DES,SHA-1,PFS_OFF"
+    }
+  },
+  {
+    "tunnel_id": "tn-019",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-007",
+    "endpoint_b": "ep-018",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-019",
+    "security_state_id": "ss-019",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S10",
+      "label": "Mixed Enterprise — Strong"
+    }
+  },
+  {
+    "tunnel_id": "tn-020",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-008",
+    "endpoint_b": "ep-019",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-020",
+    "security_state_id": "ss-020",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S10",
+      "label": "Mixed Enterprise — Strong"
+    }
+  },
+  {
+    "tunnel_id": "tn-021",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-008",
+    "endpoint_b": "ep-020",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-021",
+    "security_state_id": "ss-021",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S10",
+      "label": "Mixed Enterprise — Adequate-DH14"
+    }
+  },
+  {
+    "tunnel_id": "tn-022",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-009",
+    "endpoint_b": "ep-015",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-022",
+    "security_state_id": "ss-022",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S10",
+      "label": "Mixed Enterprise — Strong"
+    }
+  },
+  {
+    "tunnel_id": "tn-023",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-009",
+    "endpoint_b": "ep-016",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-023",
+    "security_state_id": "ss-023",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S10",
+      "label": "Mixed Enterprise — DH14-nudge"
+    }
+  },
+  {
+    "tunnel_id": "tn-024",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-010",
+    "endpoint_b": "ep-018",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-024",
+    "security_state_id": "ss-024",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S10",
+      "label": "Mixed Enterprise — Strong"
+    }
+  },
+  {
+    "tunnel_id": "tn-025",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-010",
+    "endpoint_b": "ep-020",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-025",
+    "security_state_id": "ss-025",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S10",
+      "label": "Mixed Enterprise — CBC-DH14"
+    }
+  },
+  {
+    "tunnel_id": "tn-026",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-011",
+    "endpoint_b": "ep-015",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-026",
+    "security_state_id": "ss-026",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S10",
+      "label": "Mixed Enterprise — Strong"
+    }
+  },
+  {
+    "tunnel_id": "tn-027",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-011",
+    "endpoint_b": "ep-016",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-027",
+    "security_state_id": "ss-027",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S10",
+      "label": "Mixed Enterprise — Weak+NoPFS"
+    }
+  },
+  {
+    "tunnel_id": "tn-028",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-009",
+    "endpoint_b": "ep-017",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-028",
+    "security_state_id": "ss-028",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S10",
+      "label": "Mixed Enterprise — CBC+NoPFS"
+    }
+  },
+  {
+    "tunnel_id": "tn-029",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-007",
+    "endpoint_b": "ep-009",
+    "mode": "TRANSPORT",
+    "status": "UP",
+    "negotiation_id": "neg-029",
+    "security_state_id": "ss-029",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S11",
+      "label": "Transport Mode",
+      "mode_note": "Host-to-host transport mode IPsec"
+    }
+  },
+  {
+    "tunnel_id": "tn-030",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-008",
+    "endpoint_b": "ep-009",
+    "mode": "TRANSPORT",
+    "status": "UP",
+    "negotiation_id": "neg-030",
+    "security_state_id": "ss-030",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S11",
+      "label": "Transport Mode (second)"
+    }
+  },
+  {
+    "tunnel_id": "tn-031",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-015",
+    "endpoint_b": "ep-017",
+    "mode": "TUNNEL",
+    "status": "UNKNOWN",
+    "negotiation_id": "neg-031",
+    "security_state_id": "ss-031",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S12",
+      "label": "Incomplete Observation",
+      "data_quality": "PARTIAL",
+      "unknown_fields": "pfs,floor,replay_protection"
+    }
+  },
+  {
+    "tunnel_id": "tn-032",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-016",
+    "endpoint_b": "ep-017",
+    "mode": "TUNNEL",
+    "status": "UNKNOWN",
+    "negotiation_id": "neg-032",
+    "security_state_id": "ss-032",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "S12",
+      "label": "Unvalidated Vendor Profile"
+    }
+  },
+  {
+    "tunnel_id": "tn-033",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-010",
+    "endpoint_b": "ep-011",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-033",
+    "security_state_id": "ss-033",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "HERO-A",
+      "label": "HERO: Strong Selected + Severe Floor Gap",
+      "stateflux_highlight": "PRIMARY_DEMO_FLOOR_GAP",
+      "hero_note": "This tunnel currently negotiates AES-256-GCM with DH-20 and PFS. However both endpoints still permit 3DES with DH-14 and no PFS as a fallback. If an attacker forces a proposal downgrade, or if a policy change removes AES-256-GCM, this tunnel will fall back to 3DES."
+    }
+  },
+  {
+    "tunnel_id": "tn-034",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-010",
+    "endpoint_b": "ep-012",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-034",
+    "security_state_id": "ss-034",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "HERO-B",
+      "label": "HERO: Latent Rekey Failure After Hardening",
+      "stateflux_highlight": "LATENT_REKEY_FAILURE",
+      "latent_rekey_risk": "TRUE",
+      "will_fail_after_hardening": "TRUE",
+      "hero_note": "This tunnel is currently UP with AES-128-CBC. If the proposed hardening policy (remove AES-128, require AES-256-GCM) is applied, ep-012 will have NO compatible proposals at the next rekey. The tunnel will not break immediately (current SA is alive) but WILL break silently at the next rekey event."
+    }
+  },
+  {
+    "tunnel_id": "tn-035",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-004",
+    "endpoint_b": "ep-018",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-035",
+    "security_state_id": "ss-035",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "FLEET",
+      "label": "Fleet Tunnel 35"
+    }
+  },
+  {
+    "tunnel_id": "tn-036",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-005",
+    "endpoint_b": "ep-020",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-036",
+    "security_state_id": "ss-036",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "FLEET",
+      "label": "Fleet Tunnel 36"
+    }
+  },
+  {
+    "tunnel_id": "tn-037",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-006",
+    "endpoint_b": "ep-019",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-037",
+    "security_state_id": "ss-037",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "FLEET",
+      "label": "Fleet Tunnel 37"
+    }
+  },
+  {
+    "tunnel_id": "tn-038",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-004",
+    "endpoint_b": "ep-007",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-038",
+    "security_state_id": "ss-038",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "FLEET",
+      "label": "Fleet Tunnel 38"
+    }
+  },
+  {
+    "tunnel_id": "tn-039",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-005",
+    "endpoint_b": "ep-008",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-039",
+    "security_state_id": "ss-039",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "FLEET",
+      "label": "Fleet Tunnel 39"
+    }
+  },
+  {
+    "tunnel_id": "tn-040",
+    "fleet_id": "fleet-001",
+    "endpoint_a": "ep-006",
+    "endpoint_b": "ep-009",
+    "mode": "TUNNEL",
+    "status": "UP",
+    "negotiation_id": "neg-040",
+    "security_state_id": "ss-040",
+    "rekey_interval": 3600,
+    "annotations": {
+      "scenario": "FLEET",
+      "label": "Fleet Tunnel 40"
+    }
+  }
+]

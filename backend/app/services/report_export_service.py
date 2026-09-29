@@ -46,9 +46,11 @@ logger = logging.getLogger(__name__)
 
 # Find paths for templates and styles
 candidates_root = [
+    Path(__file__).resolve().parent.parent,
     Path(__file__).resolve().parent.parent.parent.parent,
     Path.cwd(),
     Path("/var/task"),
+    Path("/var/task/backend/app"),
 ]
 WORKSPACE_ROOT = next((c for c in candidates_root if (c / "report_templates").exists()), candidates_root[0])
 TEMPLATE_DIR = WORKSPACE_ROOT / "report_templates"

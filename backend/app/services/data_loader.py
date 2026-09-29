@@ -92,8 +92,10 @@ def get_dataset() -> DatasetState:
         from app.core.config import settings
         candidates = [
             settings.SEED_DIR,
+            Path(__file__).resolve().parent.parent / "data" / "seed",
             Path.cwd() / "data" / "seed",
             Path("/var/task/data/seed"),
+            Path("/var/task/backend/app/data/seed"),
             Path(__file__).resolve().parent.parent.parent.parent / "data" / "seed",
         ]
         for c in candidates:
