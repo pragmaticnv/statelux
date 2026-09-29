@@ -2,8 +2,13 @@
   "version": 2,
   "functions": {
     "api/index.py": {
-      "includeFiles": "{backend/**,data/**,frontend/**,report_templates/**,report_styles/**}",
-      "excludeFiles": "{backend/tests/**,lab/**,docs/**,scripts/**}"
+      "includeFiles": [
+        "backend/**",
+        "data/**",
+        "frontend/**",
+        "report_templates/**",
+        "report_styles/**"
+      ]
     }
   },
   "rewrites": [

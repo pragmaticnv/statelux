@@ -12,7 +12,10 @@ router = APIRouter(prefix="/health", tags=["health"])
 @router.get("", response_model=HealthResponse)
 async def get_health() -> HealthResponse:
     """Service health check — includes dataset status."""
-    ds = data_loader._current_dataset
+    try:
+        ds = data_loader.get_dataset()
+    except Exception:
+        ds = data_loader._current_dataset
     return HealthResponse(
         status="ok",
         version=settings.VERSION,

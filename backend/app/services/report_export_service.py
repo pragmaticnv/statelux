@@ -45,7 +45,12 @@ from reportlab.pdfgen import canvas
 logger = logging.getLogger(__name__)
 
 # Find paths for templates and styles
-WORKSPACE_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+candidates_root = [
+    Path(__file__).resolve().parent.parent.parent.parent,
+    Path.cwd(),
+    Path("/var/task"),
+]
+WORKSPACE_ROOT = next((c for c in candidates_root if (c / "report_templates").exists()), candidates_root[0])
 TEMPLATE_DIR = WORKSPACE_ROOT / "report_templates"
 STYLE_DIR = WORKSPACE_ROOT / "report_styles"
 

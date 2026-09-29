@@ -153,7 +153,12 @@ def create_app() -> FastAPI:
     from pathlib import Path
     from fastapi.staticfiles import StaticFiles
 
-    frontend_dir = Path(__file__).resolve().parent.parent.parent / "frontend"
+    candidates = [
+        Path(__file__).resolve().parent.parent.parent / "frontend",
+        Path.cwd() / "frontend",
+        Path("/var/task/frontend"),
+    ]
+    frontend_dir = next((c for c in candidates if c.exists()), candidates[0])
     if frontend_dir.exists():
         app.mount("/ui", StaticFiles(directory=str(frontend_dir), html=True), name="ui")
 

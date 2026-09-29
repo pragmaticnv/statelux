@@ -11,10 +11,23 @@ from pathlib import Path
 
 
 def _project_root() -> Path:
-    """Resolve the project root (stateflux/) regardless of CWD."""
-    # This file is at: stateflux/backend/app/core/config.py
-    # Project root is 3 levels up
-    return Path(__file__).resolve().parent.parent.parent.parent
+    """Resolve the project root (stateflux/) regardless of CWD or serverless environment."""
+    # Candidate 1: 4 levels up from this file (backend/app/core/config.py)
+    candidate = Path(__file__).resolve().parent.parent.parent.parent
+    if (candidate / "data" / "seed").exists():
+        return candidate
+
+    # Candidate 2: Current working directory
+    cwd = Path.cwd()
+    if (cwd / "data" / "seed").exists():
+        return cwd
+
+    # Candidate 3: /var/task (standard AWS Lambda / Vercel runtime directory)
+    var_task = Path("/var/task")
+    if (var_task / "data" / "seed").exists():
+        return var_task
+
+    return candidate
 
 
 @dataclass

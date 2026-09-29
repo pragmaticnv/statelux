@@ -86,15 +86,21 @@ def get_dataset() -> DatasetState:
     """Return the currently loaded dataset state.
 
     If not yet loaded (e.g. in serverless environments where lifespan may be bypassed),
-    automatically loads from settings.SEED_DIR.
+    automatically loads from settings.SEED_DIR or candidate seed directories.
     """
     if not _current_dataset.is_loaded:
         from app.core.config import settings
-        if settings.SEED_DIR.exists() and any(settings.SEED_DIR.glob("*.json")):
-            return load_dataset(settings.SEED_DIR)
+        candidates = [
+            settings.SEED_DIR,
+            Path.cwd() / "data" / "seed",
+            Path("/var/task/data/seed"),
+            Path(__file__).resolve().parent.parent.parent.parent / "data" / "seed",
+        ]
+        for c in candidates:
+            if c.exists() and any(c.glob("*.json")):
+                return load_dataset(c)
         raise RuntimeError(
-            "Dataset has not been loaded. "
-            "Call load_dataset(seed_dir) before accessing data."
+            f"Dataset has not been loaded and seed data was not found at {[str(c) for c in candidates]}."
         )
     return _current_dataset
 
