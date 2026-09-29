@@ -1,0 +1,993 @@
+[
+  {
+    "negotiation_id": "neg-001",
+    "tunnel_id": "tn-001",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-001-ike-01",
+      "ep-001-ike-02"
+    ],
+    "offers_from_b": [
+      "ep-004-ike-01",
+      "ep-004-ike-02",
+      "ep-004-ike-03",
+      "ep-004-ike-04"
+    ],
+    "common_proposals": [
+      "ep-001-ike-02"
+    ],
+    "selected_proposal": "ep-001-ike-02",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-002",
+    "tunnel_id": "tn-002",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-002-ike-01",
+      "ep-002-ike-02"
+    ],
+    "offers_from_b": [
+      "ep-003-ike-01",
+      "ep-003-ike-02"
+    ],
+    "common_proposals": [
+      "ep-002-ike-01"
+    ],
+    "selected_proposal": "ep-002-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-003",
+    "tunnel_id": "tn-003",
+    "ike_version": "IKEv1",
+    "offers_from_a": [
+      "ep-012-ike-01",
+      "ep-012-ike-02",
+      "ep-012-ike-03",
+      "ep-012-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-013-ike-01",
+      "ep-013-ike-02",
+      "ep-013-ike-03",
+      "ep-013-ike-04"
+    ],
+    "common_proposals": [
+      "ep-012-ike-04"
+    ],
+    "selected_proposal": "ep-012-ike-04",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-004",
+    "tunnel_id": "tn-004",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-013-ike-01",
+      "ep-013-ike-02",
+      "ep-013-ike-03",
+      "ep-013-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-014-ike-01",
+      "ep-014-ike-02",
+      "ep-014-ike-03",
+      "ep-014-ike-04"
+    ],
+    "common_proposals": [
+      "ep-013-ike-01"
+    ],
+    "selected_proposal": "ep-013-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-005",
+    "tunnel_id": "tn-005",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-010-ike-01",
+      "ep-010-ike-02",
+      "ep-010-ike-03",
+      "ep-010-ike-04",
+      "ep-010-ike-05"
+    ],
+    "offers_from_b": [
+      "ep-011-ike-01",
+      "ep-011-ike-02",
+      "ep-011-ike-03",
+      "ep-011-ike-04",
+      "ep-011-ike-05"
+    ],
+    "common_proposals": [
+      "ep-010-ike-01",
+      "ep-010-ike-02",
+      "ep-010-ike-03",
+      "ep-010-ike-04",
+      "ep-010-ike-05"
+    ],
+    "selected_proposal": "ep-010-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-006",
+    "tunnel_id": "tn-006",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-007-ike-01",
+      "ep-007-ike-02",
+      "ep-007-ike-03",
+      "ep-007-ike-04",
+      "ep-007-ike-05",
+      "ep-007-ike-06"
+    ],
+    "offers_from_b": [
+      "ep-011-ike-01",
+      "ep-011-ike-02",
+      "ep-011-ike-03",
+      "ep-011-ike-04",
+      "ep-011-ike-05"
+    ],
+    "common_proposals": [
+      "ep-007-ike-01",
+      "ep-007-ike-02",
+      "ep-007-ike-03"
+    ],
+    "selected_proposal": "ep-007-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-007",
+    "tunnel_id": "tn-007",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-001-ike-01",
+      "ep-001-ike-02"
+    ],
+    "offers_from_b": [
+      "ep-012-ike-01",
+      "ep-012-ike-02",
+      "ep-012-ike-03",
+      "ep-012-ike-04"
+    ],
+    "common_proposals": [],
+    "selected_proposal": null,
+    "selection_rule": "FAILED_PFS_MISMATCH",
+    "status": "FAILED",
+    "failure_reason": "Endpoint ep-001 requires PFS (DH20/21); ep-012 has no PFS capability"
+  },
+  {
+    "negotiation_id": "neg-008",
+    "tunnel_id": "tn-008",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-004-ike-01",
+      "ep-004-ike-02",
+      "ep-004-ike-03",
+      "ep-004-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-014-ike-01",
+      "ep-014-ike-02",
+      "ep-014-ike-03",
+      "ep-014-ike-04"
+    ],
+    "common_proposals": [
+      "ep-004-ike-04"
+    ],
+    "selected_proposal": "ep-004-ike-04",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-009",
+    "tunnel_id": "tn-009",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-003-ike-01",
+      "ep-003-ike-02"
+    ],
+    "offers_from_b": [
+      "ep-012-ike-01",
+      "ep-012-ike-02",
+      "ep-012-ike-03",
+      "ep-012-ike-04"
+    ],
+    "common_proposals": [],
+    "selected_proposal": null,
+    "selection_rule": "FAILED_NO_COMMON_PROPOSALS",
+    "status": "FAILED",
+    "failure_reason": "No compatible proposal: ep-003 offers only AES-256-GCM with DH20/21; ep-012 offers only AES-128-CBC/3DES with DH14"
+  },
+  {
+    "negotiation_id": "neg-010",
+    "tunnel_id": "tn-010",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-005-ike-01",
+      "ep-005-ike-02",
+      "ep-005-ike-03",
+      "ep-005-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-014-ike-01",
+      "ep-014-ike-02",
+      "ep-014-ike-03",
+      "ep-014-ike-04"
+    ],
+    "common_proposals": [
+      "ep-005-ike-04"
+    ],
+    "selected_proposal": "ep-005-ike-04",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-011",
+    "tunnel_id": "tn-011",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-001-ike-01",
+      "ep-001-ike-02"
+    ],
+    "offers_from_b": [
+      "ep-013-ike-01",
+      "ep-013-ike-02",
+      "ep-013-ike-03",
+      "ep-013-ike-04"
+    ],
+    "common_proposals": [],
+    "selected_proposal": null,
+    "selection_rule": "FAILED_NO_COMMON_PROPOSALS",
+    "status": "FAILED",
+    "failure_reason": "No compatible proposal: ep-001 requires AES-256-GCM; ep-013 only supports AES-128-CBC and 3DES"
+  },
+  {
+    "negotiation_id": "neg-012",
+    "tunnel_id": "tn-012",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-006-ike-01",
+      "ep-006-ike-02",
+      "ep-006-ike-03",
+      "ep-006-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-014-ike-01",
+      "ep-014-ike-02",
+      "ep-014-ike-03",
+      "ep-014-ike-04"
+    ],
+    "common_proposals": [
+      "ep-006-ike-04"
+    ],
+    "selected_proposal": "ep-006-ike-04",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-013",
+    "tunnel_id": "tn-013",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-010-ike-01",
+      "ep-010-ike-02",
+      "ep-010-ike-03",
+      "ep-010-ike-04",
+      "ep-010-ike-05"
+    ],
+    "offers_from_b": [
+      "ep-012-ike-01",
+      "ep-012-ike-02",
+      "ep-012-ike-03",
+      "ep-012-ike-04"
+    ],
+    "common_proposals": [
+      "ep-010-ike-04",
+      "ep-010-ike-05"
+    ],
+    "selected_proposal": "ep-010-ike-04",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-014",
+    "tunnel_id": "tn-014",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-011-ike-01",
+      "ep-011-ike-02",
+      "ep-011-ike-03",
+      "ep-011-ike-04",
+      "ep-011-ike-05"
+    ],
+    "offers_from_b": [
+      "ep-013-ike-01",
+      "ep-013-ike-02",
+      "ep-013-ike-03",
+      "ep-013-ike-04"
+    ],
+    "common_proposals": [
+      "ep-011-ike-04",
+      "ep-011-ike-05"
+    ],
+    "selected_proposal": "ep-011-ike-04",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-015",
+    "tunnel_id": "tn-015",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-007-ike-01",
+      "ep-007-ike-02",
+      "ep-007-ike-03",
+      "ep-007-ike-04",
+      "ep-007-ike-05",
+      "ep-007-ike-06"
+    ],
+    "offers_from_b": [
+      "ep-008-ike-01",
+      "ep-008-ike-02",
+      "ep-008-ike-03",
+      "ep-008-ike-04",
+      "ep-008-ike-05",
+      "ep-008-ike-06"
+    ],
+    "common_proposals": [
+      "ep-007-ike-01",
+      "ep-007-ike-02"
+    ],
+    "selected_proposal": "ep-007-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-016",
+    "tunnel_id": "tn-016",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-018-ike-01",
+      "ep-018-ike-02",
+      "ep-018-ike-03",
+      "ep-018-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-019-ike-01",
+      "ep-019-ike-02",
+      "ep-019-ike-03",
+      "ep-019-ike-04"
+    ],
+    "common_proposals": [
+      "ep-018-ike-01"
+    ],
+    "selected_proposal": "ep-018-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-017",
+    "tunnel_id": "tn-017",
+    "ike_version": "IKEv1",
+    "offers_from_a": [
+      "ep-012-ike-01",
+      "ep-012-ike-02",
+      "ep-012-ike-03",
+      "ep-012-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-014-ike-01",
+      "ep-014-ike-02",
+      "ep-014-ike-03",
+      "ep-014-ike-04"
+    ],
+    "common_proposals": [
+      "ep-012-ike-03"
+    ],
+    "selected_proposal": "ep-012-ike-03",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-018",
+    "tunnel_id": "tn-018",
+    "ike_version": "IKEv1",
+    "offers_from_a": [
+      "ep-013-ike-01",
+      "ep-013-ike-02",
+      "ep-013-ike-03",
+      "ep-013-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-012-ike-01",
+      "ep-012-ike-02",
+      "ep-012-ike-03",
+      "ep-012-ike-04"
+    ],
+    "common_proposals": [
+      "ep-013-ike-03"
+    ],
+    "selected_proposal": "ep-013-ike-03",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-019",
+    "tunnel_id": "tn-019",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-007-ike-01",
+      "ep-007-ike-02",
+      "ep-007-ike-03",
+      "ep-007-ike-04",
+      "ep-007-ike-05",
+      "ep-007-ike-06"
+    ],
+    "offers_from_b": [
+      "ep-018-ike-01",
+      "ep-018-ike-02",
+      "ep-018-ike-03",
+      "ep-018-ike-04"
+    ],
+    "common_proposals": [
+      "ep-007-ike-01"
+    ],
+    "selected_proposal": "ep-007-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-020",
+    "tunnel_id": "tn-020",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-008-ike-01",
+      "ep-008-ike-02",
+      "ep-008-ike-03",
+      "ep-008-ike-04",
+      "ep-008-ike-05",
+      "ep-008-ike-06"
+    ],
+    "offers_from_b": [
+      "ep-019-ike-01",
+      "ep-019-ike-02",
+      "ep-019-ike-03",
+      "ep-019-ike-04"
+    ],
+    "common_proposals": [
+      "ep-008-ike-01"
+    ],
+    "selected_proposal": "ep-008-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-021",
+    "tunnel_id": "tn-021",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-008-ike-01",
+      "ep-008-ike-02",
+      "ep-008-ike-03",
+      "ep-008-ike-04",
+      "ep-008-ike-05",
+      "ep-008-ike-06"
+    ],
+    "offers_from_b": [
+      "ep-020-ike-01",
+      "ep-020-ike-02",
+      "ep-020-ike-03",
+      "ep-020-ike-04"
+    ],
+    "common_proposals": [
+      "ep-008-ike-03"
+    ],
+    "selected_proposal": "ep-008-ike-03",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-022",
+    "tunnel_id": "tn-022",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-009-ike-01",
+      "ep-009-ike-02",
+      "ep-009-ike-03",
+      "ep-009-ike-04",
+      "ep-009-ike-05",
+      "ep-009-ike-06"
+    ],
+    "offers_from_b": [
+      "ep-015-ike-01",
+      "ep-015-ike-02",
+      "ep-015-ike-03"
+    ],
+    "common_proposals": [
+      "ep-009-ike-01"
+    ],
+    "selected_proposal": "ep-009-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-023",
+    "tunnel_id": "tn-023",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-009-ike-01",
+      "ep-009-ike-02",
+      "ep-009-ike-03",
+      "ep-009-ike-04",
+      "ep-009-ike-05",
+      "ep-009-ike-06"
+    ],
+    "offers_from_b": [
+      "ep-016-ike-01",
+      "ep-016-ike-02",
+      "ep-016-ike-03"
+    ],
+    "common_proposals": [
+      "ep-009-ike-03"
+    ],
+    "selected_proposal": "ep-009-ike-03",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-024",
+    "tunnel_id": "tn-024",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-010-ike-01",
+      "ep-010-ike-02",
+      "ep-010-ike-03",
+      "ep-010-ike-04",
+      "ep-010-ike-05"
+    ],
+    "offers_from_b": [
+      "ep-018-ike-01",
+      "ep-018-ike-02",
+      "ep-018-ike-03",
+      "ep-018-ike-04"
+    ],
+    "common_proposals": [
+      "ep-010-ike-01"
+    ],
+    "selected_proposal": "ep-010-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-025",
+    "tunnel_id": "tn-025",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-010-ike-01",
+      "ep-010-ike-02",
+      "ep-010-ike-03",
+      "ep-010-ike-04",
+      "ep-010-ike-05"
+    ],
+    "offers_from_b": [
+      "ep-020-ike-01",
+      "ep-020-ike-02",
+      "ep-020-ike-03",
+      "ep-020-ike-04"
+    ],
+    "common_proposals": [
+      "ep-010-ike-03"
+    ],
+    "selected_proposal": "ep-010-ike-03",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-026",
+    "tunnel_id": "tn-026",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-011-ike-01",
+      "ep-011-ike-02",
+      "ep-011-ike-03",
+      "ep-011-ike-04",
+      "ep-011-ike-05"
+    ],
+    "offers_from_b": [
+      "ep-015-ike-01",
+      "ep-015-ike-02",
+      "ep-015-ike-03"
+    ],
+    "common_proposals": [
+      "ep-011-ike-01"
+    ],
+    "selected_proposal": "ep-011-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-027",
+    "tunnel_id": "tn-027",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-011-ike-01",
+      "ep-011-ike-02",
+      "ep-011-ike-03",
+      "ep-011-ike-04",
+      "ep-011-ike-05"
+    ],
+    "offers_from_b": [
+      "ep-016-ike-01",
+      "ep-016-ike-02",
+      "ep-016-ike-03"
+    ],
+    "common_proposals": [
+      "ep-011-ike-05"
+    ],
+    "selected_proposal": "ep-011-ike-05",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-028",
+    "tunnel_id": "tn-028",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-009-ike-01",
+      "ep-009-ike-02",
+      "ep-009-ike-03",
+      "ep-009-ike-04",
+      "ep-009-ike-05",
+      "ep-009-ike-06"
+    ],
+    "offers_from_b": [
+      "ep-017-ike-01",
+      "ep-017-ike-02",
+      "ep-017-ike-03"
+    ],
+    "common_proposals": [
+      "ep-009-ike-04"
+    ],
+    "selected_proposal": "ep-009-ike-04",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-029",
+    "tunnel_id": "tn-029",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-007-ike-01",
+      "ep-007-ike-02",
+      "ep-007-ike-03",
+      "ep-007-ike-04",
+      "ep-007-ike-05",
+      "ep-007-ike-06"
+    ],
+    "offers_from_b": [
+      "ep-009-ike-01",
+      "ep-009-ike-02",
+      "ep-009-ike-03",
+      "ep-009-ike-04",
+      "ep-009-ike-05",
+      "ep-009-ike-06"
+    ],
+    "common_proposals": [
+      "ep-007-ike-01"
+    ],
+    "selected_proposal": "ep-007-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-030",
+    "tunnel_id": "tn-030",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-008-ike-01",
+      "ep-008-ike-02",
+      "ep-008-ike-03",
+      "ep-008-ike-04",
+      "ep-008-ike-05",
+      "ep-008-ike-06"
+    ],
+    "offers_from_b": [
+      "ep-009-ike-01",
+      "ep-009-ike-02",
+      "ep-009-ike-03",
+      "ep-009-ike-04",
+      "ep-009-ike-05",
+      "ep-009-ike-06"
+    ],
+    "common_proposals": [
+      "ep-008-ike-01"
+    ],
+    "selected_proposal": "ep-008-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-031",
+    "tunnel_id": "tn-031",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-015-ike-01",
+      "ep-015-ike-02",
+      "ep-015-ike-03"
+    ],
+    "offers_from_b": [
+      "ep-017-ike-01",
+      "ep-017-ike-02",
+      "ep-017-ike-03"
+    ],
+    "common_proposals": [
+      "ep-015-ike-01"
+    ],
+    "selected_proposal": "ep-015-ike-01",
+    "selection_rule": "ASSUMED_FROM_PROFILE",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-032",
+    "tunnel_id": "tn-032",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-016-ike-01",
+      "ep-016-ike-02",
+      "ep-016-ike-03"
+    ],
+    "offers_from_b": [
+      "ep-017-ike-01",
+      "ep-017-ike-02",
+      "ep-017-ike-03"
+    ],
+    "common_proposals": [
+      "ep-016-ike-01"
+    ],
+    "selected_proposal": "ep-016-ike-01",
+    "selection_rule": "ASSUMED_FROM_PROFILE",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-033",
+    "tunnel_id": "tn-033",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-010-ike-01",
+      "ep-010-ike-02",
+      "ep-010-ike-03",
+      "ep-010-ike-04",
+      "ep-010-ike-05"
+    ],
+    "offers_from_b": [
+      "ep-011-ike-01",
+      "ep-011-ike-02",
+      "ep-011-ike-03",
+      "ep-011-ike-04",
+      "ep-011-ike-05"
+    ],
+    "common_proposals": [
+      "ep-010-ike-01",
+      "ep-010-ike-02",
+      "ep-010-ike-03",
+      "ep-010-ike-04",
+      "ep-010-ike-05"
+    ],
+    "selected_proposal": "ep-010-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-034",
+    "tunnel_id": "tn-034",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-010-ike-01",
+      "ep-010-ike-02",
+      "ep-010-ike-03",
+      "ep-010-ike-04",
+      "ep-010-ike-05"
+    ],
+    "offers_from_b": [
+      "ep-012-ike-01",
+      "ep-012-ike-02",
+      "ep-012-ike-03",
+      "ep-012-ike-04"
+    ],
+    "common_proposals": [
+      "ep-010-ike-04",
+      "ep-010-ike-05"
+    ],
+    "selected_proposal": "ep-010-ike-04",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-035",
+    "tunnel_id": "tn-035",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-004-ike-01",
+      "ep-004-ike-02",
+      "ep-004-ike-03",
+      "ep-004-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-018-ike-01",
+      "ep-018-ike-02",
+      "ep-018-ike-03",
+      "ep-018-ike-04"
+    ],
+    "common_proposals": [
+      "ep-004-ike-01"
+    ],
+    "selected_proposal": "ep-004-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-036",
+    "tunnel_id": "tn-036",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-005-ike-01",
+      "ep-005-ike-02",
+      "ep-005-ike-03",
+      "ep-005-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-020-ike-01",
+      "ep-020-ike-02",
+      "ep-020-ike-03",
+      "ep-020-ike-04"
+    ],
+    "common_proposals": [
+      "ep-005-ike-01"
+    ],
+    "selected_proposal": "ep-005-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-037",
+    "tunnel_id": "tn-037",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-006-ike-01",
+      "ep-006-ike-02",
+      "ep-006-ike-03",
+      "ep-006-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-019-ike-01",
+      "ep-019-ike-02",
+      "ep-019-ike-03",
+      "ep-019-ike-04"
+    ],
+    "common_proposals": [
+      "ep-006-ike-01"
+    ],
+    "selected_proposal": "ep-006-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-038",
+    "tunnel_id": "tn-038",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-004-ike-01",
+      "ep-004-ike-02",
+      "ep-004-ike-03",
+      "ep-004-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-007-ike-01",
+      "ep-007-ike-02",
+      "ep-007-ike-03",
+      "ep-007-ike-04",
+      "ep-007-ike-05",
+      "ep-007-ike-06"
+    ],
+    "common_proposals": [
+      "ep-004-ike-01"
+    ],
+    "selected_proposal": "ep-004-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-039",
+    "tunnel_id": "tn-039",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-005-ike-01",
+      "ep-005-ike-02",
+      "ep-005-ike-03",
+      "ep-005-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-008-ike-01",
+      "ep-008-ike-02",
+      "ep-008-ike-03",
+      "ep-008-ike-04",
+      "ep-008-ike-05",
+      "ep-008-ike-06"
+    ],
+    "common_proposals": [
+      "ep-005-ike-01"
+    ],
+    "selected_proposal": "ep-005-ike-01",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  },
+  {
+    "negotiation_id": "neg-040",
+    "tunnel_id": "tn-040",
+    "ike_version": "IKEv2",
+    "offers_from_a": [
+      "ep-006-ike-01",
+      "ep-006-ike-02",
+      "ep-006-ike-03",
+      "ep-006-ike-04"
+    ],
+    "offers_from_b": [
+      "ep-009-ike-01",
+      "ep-009-ike-02",
+      "ep-009-ike-03",
+      "ep-009-ike-04",
+      "ep-009-ike-05",
+      "ep-009-ike-06"
+    ],
+    "common_proposals": [
+      "ep-006-ike-03"
+    ],
+    "selected_proposal": "ep-006-ike-03",
+    "selection_rule": "HIGHEST_PRIORITY_COMMON",
+    "status": "SUCCESS",
+    "failure_reason": null
+  }
+]

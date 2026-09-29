@@ -1,0 +1,1017 @@
+[
+  {
+    "security_state_id": "ss-001",
+    "tunnel_id": "tn-001",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 0.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20+PFS"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-002",
+    "tunnel_id": "tn-002",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 21,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 21,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 0.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH21+PFS"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-003",
+    "tunnel_id": "tn-003",
+    "selected": {
+      "encryption": "3DES",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "3DES",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 85.0,
+      "level": "CRITICAL",
+      "basis": "3DES+SHA-1+IKEv1+PFS_DISABLED"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-004",
+    "tunnel_id": "tn-004",
+    "selected": {
+      "encryption": "AES-128-CBC",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "AES-128-CBC",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 64.0,
+      "level": "HIGH",
+      "basis": "AES-128-CBC+SHA-1+PFS_DISABLED"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-005",
+    "tunnel_id": "tn-005",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "3DES",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "SELECTED=AES-256-GCM+DH20 | FLOOR=3DES+SHA-1"
+    },
+    "floor_gap_exists": true,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-006",
+    "tunnel_id": "tn-006",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-128-CBC",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "SELECTED=AES-256-GCM | FLOOR=AES-128-CBC+SHA-1"
+    },
+    "floor_gap_exists": true,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-007",
+    "tunnel_id": "tn-007",
+    "selected": {
+      "encryption": null,
+      "integrity": null,
+      "dh_group": null,
+      "pfs": null
+    },
+    "floor": null,
+    "controls": {
+      "replay_protection": null
+    },
+    "risk": {
+      "score": 0.0,
+      "level": "INFO",
+      "basis": "NEGOTIATION_FAILED"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-008",
+    "tunnel_id": "tn-008",
+    "selected": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 28.0,
+      "level": "LOW",
+      "basis": "AES-256-CBC+DH14+PFS_DISABLED"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-009",
+    "tunnel_id": "tn-009",
+    "selected": {
+      "encryption": null,
+      "integrity": null,
+      "dh_group": null,
+      "pfs": null
+    },
+    "floor": null,
+    "controls": {
+      "replay_protection": null
+    },
+    "risk": {
+      "score": 0.0,
+      "level": "INFO",
+      "basis": "NEGOTIATION_FAILED"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-010",
+    "tunnel_id": "tn-010",
+    "selected": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 23.0,
+      "level": "LOW",
+      "basis": "AES-256-CBC+DH14+PFS_DISABLED (DH degraded)"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-011",
+    "tunnel_id": "tn-011",
+    "selected": {
+      "encryption": null,
+      "integrity": null,
+      "dh_group": null,
+      "pfs": null
+    },
+    "floor": null,
+    "controls": {
+      "replay_protection": null
+    },
+    "risk": {
+      "score": 0.0,
+      "level": "INFO",
+      "basis": "NEGOTIATION_FAILED"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-012",
+    "tunnel_id": "tn-012",
+    "selected": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 23.0,
+      "level": "LOW",
+      "basis": "AES-256-CBC+DH14 (downgraded due to peer enc support)"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-013",
+    "tunnel_id": "tn-013",
+    "selected": {
+      "encryption": "AES-128-CBC",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "3DES",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 64.0,
+      "level": "HIGH",
+      "basis": "SELECTED=AES-128-CBC+SHA-1 | LATENT_REKEY_RISK"
+    },
+    "floor_gap_exists": true,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-014",
+    "tunnel_id": "tn-014",
+    "selected": {
+      "encryption": "AES-128-CBC",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "3DES",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 64.0,
+      "level": "HIGH",
+      "basis": "SELECTED=AES-128-CBC+SHA-1 | LATENT_REKEY_RISK"
+    },
+    "floor_gap_exists": true,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-015",
+    "tunnel_id": "tn-015",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 14,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20+PFS | POLICY_COMPLIANT"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-016",
+    "tunnel_id": "tn-016",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 0.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20+PFS | POLICY_COMPLIANT"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-017",
+    "tunnel_id": "tn-017",
+    "selected": {
+      "encryption": "AES-128-CBC",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "AES-128-CBC",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 71.0,
+      "level": "HIGH",
+      "basis": "IKEv1+AES-128-CBC+SHA-1+PFS_DISABLED | POLICY_VIOLATION"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-018",
+    "tunnel_id": "tn-018",
+    "selected": {
+      "encryption": "3DES",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "3DES",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 85.0,
+      "level": "CRITICAL",
+      "basis": "IKEv1+3DES+SHA-1+PFS_DISABLED | CRITICAL_POLICY_VIOLATION"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-019",
+    "tunnel_id": "tn-019",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20+PFS=ON"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-020",
+    "tunnel_id": "tn-020",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20+PFS=ON"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-021",
+    "tunnel_id": "tn-021",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 14,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 14,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH14+PFS=ON"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-022",
+    "tunnel_id": "tn-022",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20+PFS=ON"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-023",
+    "tunnel_id": "tn-023",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 14,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 14,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 10.0,
+      "level": "LOW",
+      "basis": "AES-256-GCM+DH14+PFS=ON"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-024",
+    "tunnel_id": "tn-024",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20+PFS=ON"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-025",
+    "tunnel_id": "tn-025",
+    "selected": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 10.0,
+      "level": "LOW",
+      "basis": "AES-256-CBC+DH14+PFS=ON"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-026",
+    "tunnel_id": "tn-026",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20+PFS=ON"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-027",
+    "tunnel_id": "tn-027",
+    "selected": {
+      "encryption": "AES-128-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "AES-128-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 50.0,
+      "level": "MEDIUM",
+      "basis": "AES-128-CBC+DH14+PFS=OFF"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-028",
+    "tunnel_id": "tn-028",
+    "selected": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 23.0,
+      "level": "LOW",
+      "basis": "AES-256-CBC+DH14+PFS=OFF"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-029",
+    "tunnel_id": "tn-029",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 0.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20+PFS | TRANSPORT_MODE"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-030",
+    "tunnel_id": "tn-030",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 0.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20+PFS | TRANSPORT_MODE"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-031",
+    "tunnel_id": "tn-031",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": null
+    },
+    "floor": null,
+    "controls": {
+      "replay_protection": null
+    },
+    "risk": {
+      "score": 10.0,
+      "level": "LOW",
+      "basis": "INCOMPLETE_DATA | PFS_UNKNOWN | FLOOR_UNKNOWN"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-032",
+    "tunnel_id": "tn-032",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": null
+    },
+    "floor": null,
+    "controls": {
+      "replay_protection": null
+    },
+    "risk": {
+      "score": 10.0,
+      "level": "LOW",
+      "basis": "INCOMPLETE_DATA | VENDOR_PROFILE_UNVALIDATED"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-033",
+    "tunnel_id": "tn-033",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "3DES",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "HERO: SELECTED=AES-256-GCM+DH20 | FLOOR=3DES+SHA-1+NO-PFS"
+    },
+    "floor_gap_exists": true,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-034",
+    "tunnel_id": "tn-034",
+    "selected": {
+      "encryption": "AES-128-CBC",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "floor": {
+      "encryption": "3DES",
+      "integrity": "HMAC-SHA-1",
+      "dh_group": 14,
+      "pfs": false
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 64.0,
+      "level": "HIGH",
+      "basis": "HERO: CURRENT=AES-128-CBC | WILL_FAIL_AFTER_HARDENING"
+    },
+    "floor_gap_exists": true,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-035",
+    "tunnel_id": "tn-035",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-036",
+    "tunnel_id": "tn-036",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-037",
+    "tunnel_id": "tn-037",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-038",
+    "tunnel_id": "tn-038",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-039",
+    "tunnel_id": "tn-039",
+    "selected": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-GCM",
+      "integrity": null,
+      "dh_group": 20,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 5.0,
+      "level": "INFO",
+      "basis": "AES-256-GCM+DH20"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  },
+  {
+    "security_state_id": "ss-040",
+    "tunnel_id": "tn-040",
+    "selected": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": true
+    },
+    "floor": {
+      "encryption": "AES-256-CBC",
+      "integrity": "HMAC-SHA-256",
+      "dh_group": 14,
+      "pfs": true
+    },
+    "controls": {
+      "replay_protection": true
+    },
+    "risk": {
+      "score": 10.0,
+      "level": "LOW",
+      "basis": "AES-256-CBC+DH14"
+    },
+    "floor_gap_exists": false,
+    "assessment_version": "1.0-phase1a"
+  }
+]

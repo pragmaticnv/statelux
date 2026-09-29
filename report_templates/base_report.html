@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ report_title }} — STATEFLUX Intelligence Report</title>
+  <style>
+    {{ inline_css }}
+  </style>
+</head>
+<body>
+  <!-- SCREEN-ONLY FLOATING ACTION BAR -->
+  <div class="report-action-bar no-print">
+    <div class="brand-badge">
+      <span>◆ STATEFLUX</span>
+      <span style="color: #64748b;">|</span>
+      <span style="font-weight: 500; font-size: 11px; color: #cbd5e1;">{{ report_type_label }}</span>
+    </div>
+    <div class="action-buttons">
+      <a href="/ui/#/reports/{{ report_nav_slug }}" class="btn-secondary">
+        ← Return to Command Center
+      </a>
+      <a href="/api/v1/reports/export/{{ report_endpoint_slug }}/json" class="btn-secondary" download>
+        ⬇ Export JSON
+      </a>
+      <a href="/api/v1/reports/export/{{ report_endpoint_slug }}/pdf" class="btn-primary" download>
+        ⬇ Download Native PDF
+      </a>
+      <button onclick="window.print()" class="btn-primary">
+        🖨 Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- STANDALONE REPORT DOCUMENT CONTAINER -->
+  <div class="report-paper">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <script>
+    // Automatically trigger print dialog if requested via ?autoprint=true
+    if (new URLSearchParams(window.location.search).get('autoprint') === 'true') {
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => { window.print(); }, 400);
+      });
+    }
+  </script>
+</body>
+</html>

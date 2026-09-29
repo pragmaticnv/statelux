@@ -1,0 +1,270 @@
+{% extends "base_report.html" %}
+
+{% block content %}
+<!-- ========================================================================
+     PAGE 1: COVER
+     ======================================================================== -->
+<div class="report-cover">
+  <div class="cover-header">
+    <div class="cover-logo">
+      <div class="cover-brand">STATEFLUX</div>
+      <div class="cover-badge">TECHNICAL AUDIT</div>
+    </div>
+    <div class="cover-tagline">IPsec Security Change-Impact Intelligence</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-doc-type">TECHNICAL CRYPTOGRAPHIC INTELLIGENCE REPORT</div>
+    <h1 class="cover-title">IPsec FLEET CRYPTOGRAPHIC AUDIT &amp; EVIDENCE REPOSITORY</h1>
+    <div class="cover-subtitle">
+      Comprehensive technical breakdown of endpoint proposals, negotiation space matrices, dynamic security floor frontiers, detailed findings, and PCAP/log observations.
+    </div>
+
+    <div class="cover-metadata-grid">
+      <div class="cover-meta-item">
+        <div class="meta-label">Generated Date</div>
+        <div class="meta-val">{{ report.generated_at.strftime('%d %B %Y') }}</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="meta-label">Report Identifier</div>
+        <div class="meta-val"><code>{{ report.report_id }}</code></div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="meta-label">Inventory Scope</div>
+        <div class="meta-val">{{ report.tunnel_count }} Tunnels &bull; {{ report.endpoint_count }} Endpoints &bull; {{ report.proposal_count }} Proposals</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="meta-label">Indexed Evidence Records</div>
+        <div class="meta-val">{{ report.evidence_chain_count }} Correlated Facts</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="confidentiality-notice">TECHNICAL SECURITY AUDIT &bull; OPERATIONAL LEVEL ASSURANCE</div>
+    <div>Document Version 1.0</div>
+  </div>
+</div>
+
+<!-- ========================================================================
+     PAGE 2: INVENTORY & FLOOR DISTRIBUTION
+     ======================================================================== -->
+<div class="page-break"></div>
+
+<div class="report-running-header">
+  <span class="brand">STATEFLUX</span>
+  <span>IPsec Security Change-Impact Intelligence</span>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">1.</span> Fleet Cryptographic Inventory Summary</h2>
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="stat-val val-accent">{{ report.endpoint_count }}</div>
+      <div class="stat-label">Endpoints</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-accent">{{ report.tunnel_count }}</div>
+      <div class="stat-label">Tunnels</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">{{ report.proposal_count }}</div>
+      <div class="stat-label">Proposals</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-green">{{ report.evidence_chain_count }}</div>
+      <div class="stat-label">Evidence Items</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-red">{{ report.detailed_findings | length }}</div>
+      <div class="stat-label">Active Findings</div>
+    </div>
+  </div>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">2.</span> Dynamic Security Floor Distribution</h2>
+  <p>
+    Distribution of worst-case negotiation floors across active tunnels, representing the weakest cipher suites that endpoints could fall back to under active downgrade manipulation:
+  </p>
+  <div class="table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Negotiation Floor Cipher</th>
+          <th>Tunnel Count</th>
+          <th>Percentage of Fleet</th>
+          <th>Floor Risk Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cipher, count in report.negotiation_floor_distribution.items() %}
+        <tr>
+          <td><code>{{ cipher }}</code></td>
+          <td><strong>{{ count }}</strong></td>
+          <td>{{ ((count / report.tunnel_count) * 100) | round(1) }}%</td>
+          <td>
+            {% if cipher in ['3DES', 'DES', 'AES-128-CBC'] %}
+              <span class="badge badge-red">CRITICAL RISK</span>
+            {% elif cipher in ['AES-256-CBC'] %}
+              <span class="badge badge-amber">MODERATE RISK</span>
+            {% else %}
+              <span class="badge badge-green">HARDENED</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">3.</span> Telemetry &amp; Traffic Observation Summary</h2>
+  <div class="table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Telemetry Source</th>
+          <th>Captured Scope</th>
+          <th>Protocols Monitored</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>PCAP Packet Captures</strong></td>
+          <td>{{ report.pcap_observations_summary.get('pcap_evidence_items', 0) }} Verified Evidence Items</td>
+          <td><code>{{ report.pcap_observations_summary.get('protocols_analyzed', ['IKEv2', 'ESP']) | join(', ') }}</code></td>
+        </tr>
+        <tr>
+          <td><strong>Daemon Syslog Events</strong></td>
+          <td>{{ report.log_events_summary.get('log_evidence_items', 0) }} Parsed Log Sequences</td>
+          <td><code>{{ report.log_events_summary.get('monitored_events', ['IKE_SA_ESTABLISHED', 'NO_PROPOSAL_CHOSEN']) | join(', ') }}</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="report-running-footer">
+  <span>TECHNICAL CRYPTOGRAPHIC INTELLIGENCE REPORT &bull; {{ report.report_id }}</span>
+  <span>Page 2 of 4</span>
+</div>
+
+<!-- ========================================================================
+     PAGE 3: DETAILED FINDINGS TABLE
+     ======================================================================== -->
+<div class="page-break"></div>
+
+<div class="report-running-header">
+  <span class="brand">STATEFLUX</span>
+  <span>IPsec Security Change-Impact Intelligence</span>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">4.</span> Comprehensive Cryptographic Findings</h2>
+  <p>
+    Deterministic rule evaluations identified {{ report.detailed_findings | length }} security findings across the fleet:
+  </p>
+  <div class="table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th style="width: 14%;">Finding ID</th>
+          <th style="width: 10%;">Severity</th>
+          <th style="width: 30%;">Title &amp; Rule</th>
+          <th style="width: 18%;">Affected Scope</th>
+          <th style="width: 28%;">Remediation Guidance</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for f in report.detailed_findings %}
+        <tr>
+          <td><code>{{ f.finding_id }}</code></td>
+          <td>
+            <span class="badge {% if f.severity.value == 'CRITICAL' %}badge-red{% elif f.severity.value == 'HIGH' %}badge-amber{% elif f.severity.value == 'MEDIUM' %}badge-blue{% else %}badge-neutral{% endif %}">
+              {{ f.severity.value }}
+            </span>
+          </td>
+          <td>
+            <div style="font-weight: 600; color: #0f172a;">{{ f.title }}</div>
+            <div style="font-size: 7pt; color: #64748b;">Rule: <code>{{ f.derived_from }}</code></div>
+          </td>
+          <td style="font-size: 7.5pt;">
+            {{ f.affected_tunnels | length }} Tunnels
+            {% if f.affected_tunnels %}
+            <div style="color: #64748b; font-family: var(--font-mono); font-size: 6.5pt;">{{ f.affected_tunnels[:4] | join(', ') }}{% if f.affected_tunnels | length > 4 %}...{% endif %}</div>
+            {% endif %}
+          </td>
+          <td style="font-size: 7.5pt;">{{ f.remediation }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="report-running-footer">
+  <span>TECHNICAL CRYPTOGRAPHIC INTELLIGENCE REPORT &bull; {{ report.report_id }}</span>
+  <span>Page 3 of 4</span>
+</div>
+
+<!-- ========================================================================
+     PAGE 4: TECHNICAL REMEDIATION MATRIX
+     ======================================================================== -->
+<div class="page-break"></div>
+
+<div class="report-running-header">
+  <span class="brand">STATEFLUX</span>
+  <span>IPsec Security Change-Impact Intelligence</span>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">5.</span> Technical Remediation Matrix</h2>
+  <p>
+    Specific standards-based guidance for network engineering teams to remediate identified security defects:
+  </p>
+  <div class="table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th style="width: 14%;">Finding ID</th>
+          <th style="width: 18%;">Evaluation Rule</th>
+          <th style="width: 44%;">Technical Remediation Directive</th>
+          <th style="width: 24%;">Standards References</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for rm in report.technical_remediation_matrix %}
+        <tr>
+          <td><code>{{ rm.finding_id }}</code></td>
+          <td><code>{{ rm.rule }}</code></td>
+          <td style="font-size: 7.5pt;">{{ rm.remediation }}</td>
+          <td>
+            {% for ref in rm.standards_reference %}
+              <span class="code-tag">{{ ref }}</span>
+            {% else %}
+              <span class="code-tag">RFC 7296</span>
+            {% endfor %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">6.</span> Cryptographic Standards References</h2>
+  <div class="exec-summary-box">
+    <p style="font-size: 8.5pt;">
+      Standards referenced in this evaluation: <strong>RFC 7296</strong> (Internet Key Exchange Protocol Version 2), <strong>RFC 4303</strong> (IP Encapsulating Security Payload), <strong>NIST SP 800-77 Rev. 1</strong> (Guide to IPsec VPNs), <strong>NSA Commercial National Security Algorithm (CNSA) Suite</strong>.
+    </p>
+  </div>
+</div>
+
+<div class="report-running-footer">
+  <span>TECHNICAL CRYPTOGRAPHIC INTELLIGENCE REPORT &bull; {{ report.report_id }}</span>
+  <span>Page 4 of 4</span>
+</div>
+{% endblock %}

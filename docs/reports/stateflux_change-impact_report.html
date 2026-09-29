@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STATEFLUX Change-Impact Assessment: sim-20260929145158 — STATEFLUX Intelligence Report</title>
+  <style>
+    /*
+ * STATEFLUX — Dedicated Standalone Cybersecurity Report Stylesheet
+ * ================================================================
+ * Designed strictly for high-fidelity print &amp; PDF document generation.
+ * Completely independent of the web application shell.
+ */
+
+@import url(&#39;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap&#39;);
+
+:root {
+  --font-main: &#39;Inter&#39;, -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: &#39;JetBrains Mono&#39;, &#39;SFMono-Regular&#39;, Consolas, &#39;Liberation Mono&#39;, Menlo, monospace;
+  
+  --color-bg: #ffffff;
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-light: #94a3b8;
+  
+  --color-primary: #0f172a;
+  --color-accent: #0284c7;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+  --color-bg-subtle: #f8fafc;
+  --color-bg-card: #f8fafc;
+
+  --color-success: #16a34a;
+  --color-success-bg: #dcfce7;
+  --color-warning: #d97706;
+  --color-warning-bg: #fef3c7;
+  --color-danger: #dc2626;
+  --color-danger-bg: #fee2e2;
+  --color-info: #0284c7;
+  --color-info-bg: #e0f2fe;
+}
+
+/* Base Print &amp; Screen Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-main);
+  font-size: 10pt;
+  line-height: 1.5;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Page Geometry */
+@page {
+  size: A4 portrait;
+  margin: 20mm 16mm 20mm 16mm;
+}
+
+@page :left {
+  margin: 20mm 16mm 20mm 16mm;
+}
+
+@page :right {
+  margin: 20mm 16mm 20mm 16mm;
+}
+
+/* Page Break Helpers */
+.page-break {
+  break-before: page;
+  page-break-before: always;
+}
+
+.avoid-break {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Screen Wrapper (Provides realistic paper view on screen) */
+.report-paper {
+  max-width: 210mm;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 24mm 20mm;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+@media print {
+  body {
+    background: transparent;
+  }
+  .report-paper {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Web Action Bar (Screen Only) */
+.report-action-bar {
+  max-width: 210mm;
+  margin: 20px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.report-action-bar .brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #38bdf8;
+}
+
+.report-action-bar .action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.report-action-bar button, .report-action-bar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: #0284c7;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background: #0369a1;
+}
+
+.btn-secondary {
+  background: #334155;
+  color: #f8fafc;
+}
+.btn-secondary:hover {
+  background: #475569;
+}
+
+/* Running Header &amp; Footer for Subsequent Pages */
+.report-running-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 6px;
+  margin-bottom: 22px;
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.report-running-header .brand {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.report-running-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: 6px;
+  margin-top: 28px;
+  font-size: 8pt;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   COVER PAGE
+   ========================================================================== */
+.report-cover {
+  min-height: 245mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20mm 0 10mm 0;
+}
+
+.cover-header {
+  border-bottom: 3px solid #0f172a;
+  padding-bottom: 14px;
+}
+
+.cover-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.cover-brand {
+  font-size: 26pt;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #0f172a;
+}
+
+.cover-badge {
+  font-size: 8.5pt;
+  font-weight: 700;
+  padding: 3px 8px;
+  background: #e0f2fe;
+  color: #0369a1;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cover-tagline {
+  font-size: 11pt;
+  font-weight: 500;
+  color: #64748b;
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cover-body {
+  margin: 35mm 0;
+}
+
+.cover-doc-type {
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 8px;
+}
+
+.cover-title {
+  font-size: 26pt;
+  font-weight: 800;
+  line-height: 1.18;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.cover-subtitle {
+  font-size: 13pt;
+  font-weight: 400;
+  color: #475569;
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+.cover-metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #0284c7;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-top: 25mm;
+}
+
+.cover-meta-item .meta-label {
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin-bottom: 3px;
+}
+
+.cover-meta-item .meta-val {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.cover-footer {
+  border-top: 1px solid #cbd5e1;
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 8pt;
+  color: #64748b;
+}
+
+.cover-footer .confidentiality-notice {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+/* ==========================================================================
+   DOCUMENT TYPOGRAPHY &amp; SECTIONS
+   ========================================================================== */
+.report-section {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 15pt;
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 20px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title .section-num {
+  color: #0284c7;
+  font-weight: 800;
+}
+
+.subheading {
+  font-size: 11pt;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+p, .paragraph {
+  font-size: 9.5pt;
+  color: #334155;
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+/* Callout / Executive Summary Box */
+.exec-summary-box {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #0f172a;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 14px 0 20px 0;
+}
+
+.exec-summary-box.alert-box {
+  border-left-color: #d97706;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.exec-summary-box .box-title {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.exec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.exec-grid-item {
+  padding: 8px 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+
+.exec-grid-item .k {
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.exec-grid-item .v {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #0f172a;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   METRIC SUMMARY CARDS
+   ========================================================================== */
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+  margin: 14px 0 20px 0;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.stat-card .stat-val {
+  font-size: 18pt;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+  font-family: var(--font-mono);
+}
+
+.stat-card .stat-val.val-green {
+  color: var(--color-success);
+}
+.stat-card .stat-val.val-amber {
+  color: var(--color-warning);
+}
+.stat-card .stat-val.val-red {
+  color: var(--color-danger);
+}
+.stat-card .stat-val.val-accent {
+  color: var(--color-accent);
+}
+
+.stat-card .stat-label {
+  font-size: 7pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+.table-wrap {
+  margin: 12px 0 20px 0;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+table.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  text-align: left;
+}
+
+table.report-table thead {
+  display: table-header-group;
+  background: #f1f5f9;
+}
+
+table.report-table th {
+  padding: 8px 10px;
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #475569;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+table.report-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  vertical-align: middle;
+}
+
+table.report-table tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+table.report-table tr.highlight-row td {
+  background: #fffbeb;
+  font-weight: 600;
+}
+
+/* Status Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 7px;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.badge-green {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.badge-red {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.badge-amber {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.badge-blue {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.badge-neutral {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+/* Monospace Code / Spec Elements */
+code, pre, .code-tag {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+}
+
+.code-tag {
+  background: #f1f5f9;
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   LAB-05 DEEP DIVE LIFECYCLE FLOW
+   ========================================================================== */
+.rekey-flow-container {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.rekey-flow-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #f8fafc;
+  padding: 8px 12px;
+}
+
+.flow-step.step-success {
+  border-left: 5px solid var(--color-success);
+}
+
+.flow-step.step-transit {
+  border-left: 5px solid var(--color-warning);
+}
+
+.flow-step.step-danger {
+  border-left: 5px solid var(--color-danger);
+  background: #fef2f2;
+}
+
+.flow-step .step-idx {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  font-weight: 700;
+  width: 70px;
+  color: #64748b;
+}
+
+.flow-step .step-content {
+  flex: 1;
+}
+
+.flow-step .step-title {
+  font-size: 9pt;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.flow-step .step-desc {
+  font-size: 8pt;
+  color: #64748b;
+}
+
+.flow-step .step-status {
+  margin-left: 12px;
+}
+
+.flow-connector {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 11pt;
+  font-weight: 700;
+  line-height: 1;
+  margin: -4px 0;
+}
+
+/* Comparison Verification Box */
+.verification-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 14px;
+}
+
+.verify-item {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.verify-item .lbl {
+  font-size: 7pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.verify-item .val {
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+}
+
+/* Log Excerpt Box */
+.log-box {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  line-height: 1.45;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+
+.log-box .log-line {
+  margin-bottom: 2px;
+}
+
+.log-box .log-ts {
+  color: #64748b;
+}
+
+.log-box .log-alert {
+  color: #f87171;
+  font-weight: 600;
+}
+
+.log-box .log-warn {
+  color: #fbbf24;
+}
+
+.log-box .log-highlight {
+  color: #38bdf8;
+}
+
+/* ==========================================================================
+   EVIDENCE CHAIN FLOW
+   ========================================================================== */
+.evidence-chain-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 12px 0 16px 0;
+}
+
+.chain-node {
+  text-align: center;
+}
+
+.chain-node .node-badge {
+  display: inline-block;
+  font-size: 7.5pt;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #0f172a;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.chain-node .node-id {
+  font-size: 7pt;
+  font-family: var(--font-mono);
+  color: #0284c7;
+  margin-top: 2px;
+  font-weight: 600;
+}
+
+.chain-arrow {
+  color: #94a3b8;
+  font-size: 12pt;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   METHODOLOGY ARCHITECTURE DIAGRAM
+   ========================================================================== */
+.methodology-diagram {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 12px 0 18px 0;
+}
+
+.gw-box {
+  width: 180px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-top: 3px solid #0f172a;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.gw-box .gw-title {
+  font-size: 9pt;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.gw-box .gw-ver {
+  font-size: 7.5pt;
+  font-weight: 600;
+  color: #0284c7;
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+
+.gw-pipe {
+  flex: 1;
+  text-align: center;
+  padding: 0 14px;
+}
+
+.gw-pipe .pipe-line {
+  height: 2px;
+  background: #cbd5e1;
+  position: relative;
+  margin: 8px 0;
+}
+
+.gw-pipe .pipe-label {
+  font-size: 7pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.08em;
+}
+
+.gw-pipe .pipe-proto {
+  display: inline-block;
+  font-size: 7pt;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  background: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #0f172a;
+}
+
+  </style>
+</head>
+<body>
+  <!-- SCREEN-ONLY FLOATING ACTION BAR -->
+  <div class="report-action-bar no-print">
+    <div class="brand-badge">
+      <span>◆ STATEFLUX</span>
+      <span style="color: #64748b;">|</span>
+      <span style="font-weight: 500; font-size: 11px; color: #cbd5e1;">Change-Impact Assessment Report</span>
+    </div>
+    <div class="action-buttons">
+      <a href="/ui/#/reports/change-impact" class="btn-secondary">
+        ← Return to Command Center
+      </a>
+      <a href="/api/v1/reports/export/change-impact/json" class="btn-secondary" download>
+        ⬇ Export JSON
+      </a>
+      <a href="/api/v1/reports/export/change-impact/pdf" class="btn-primary" download>
+        ⬇ Download Native PDF
+      </a>
+      <button onclick="window.print()" class="btn-primary">
+        🖨 Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- STANDALONE REPORT DOCUMENT CONTAINER -->
+  <div class="report-paper">
+    
+<!-- ========================================================================
+     PAGE 1: COVER
+     ======================================================================== -->
+<div class="report-cover">
+  <div class="cover-header">
+    <div class="cover-logo">
+      <div class="cover-brand">STATEFLUX</div>
+      <div class="cover-badge">CHANGE INTELLIGENCE</div>
+    </div>
+    <div class="cover-tagline">IPsec Security Change-Impact Intelligence</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-doc-type">CHANGE-IMPACT ASSESSMENT REPORT</div>
+    <h1 class="cover-title">IPsec FLEET CHANGE-IMPACT &amp; BLAST RADIUS AUDIT</h1>
+    <div class="cover-subtitle">
+      Deterministic pre-implementation simulation of proposed policy changes, identifying immediate connection dropouts, latent rekey failures, and safe migration waves.
+    </div>
+
+    <div class="cover-metadata-grid">
+      <div class="cover-meta-item">
+        <div class="meta-label">Generated Date</div>
+        <div class="meta-val">29 September 2026</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="meta-label">Simulation Identifier</div>
+        <div class="meta-val"><code>sim-20260929145158</code></div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="meta-label">Target Fleet Scope</div>
+        <div class="meta-val">40 IPsec Tunnels &bull; 20 Gateway Endpoints</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="meta-label">Migration Plan Reference</div>
+        <div class="meta-val"><code>plan-sim-20260929145158</code></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="confidentiality-notice">PRE-DEPLOYMENT CHANGE IMPACT AUDIT &bull; CONFIDENTIAL</div>
+    <div>Document Version 1.0</div>
+  </div>
+</div>
+
+<!-- ========================================================================
+     PAGE 2: SECTIONS 1 - 4
+     ======================================================================== -->
+<div class="page-break"></div>
+
+<div class="report-running-header">
+  <span class="brand">STATEFLUX</span>
+  <span>IPsec Security Change-Impact Intelligence</span>
+</div>
+
+<!-- 1. Executive Summary -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">1.</span> Executive Summary</h2>
+  <div class="exec-summary-box">
+    <div class="box-title">Assessment Summary</div>
+    <p>
+      Change Impact Analysis: Proposed policy hardens 10 tunnels, but introduces 7 immediate connection failures and 7 latent rekey failures. Pre-migration remediation is strictly mandatory on blocked tunnels before applying configuration.
+    </p>
+    
+    <div class="exec-grid">
+      <div class="exec-grid-item">
+        <div class="k">Change Scope</div>
+        <div class="v">FLEET</div>
+      </div>
+      <div class="exec-grid-item">
+        <div class="k">Simulated Tunnels</div>
+        <div class="v">40 Managed Tunnels</div>
+      </div>
+      <div class="exec-grid-item">
+        <div class="k">Immediate Dropouts</div>
+        <div class="v" style="color: var(--color-danger);">7 Incompatible Tunnels</div>
+      </div>
+      <div class="exec-grid-item">
+        <div class="k">Latent Rekey Failures</div>
+        <div class="v" style="color: var(--color-warning);">7 Dormant Rekey Outages</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Current Fleet State -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">2.</span> Current Fleet State</h2>
+  <p>
+    The managed fleet currently comprises <strong>40 IPsec site-to-site tunnels</strong> interconnecting <strong>20 gateway endpoints</strong> across core datacenters, regional hubs, cloud VPCs, and remote branches. 
+  </p>
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="stat-val">40</div>
+      <div class="stat-label">Total Tunnels</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">20</div>
+      <div class="stat-label">Gateways</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-green">155</div>
+      <div class="stat-label">Active Proposals</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-amber">11</div>
+      <div class="stat-label">Legacy Fallbacks</div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Proposed Change -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">3.</span> Proposed Change</h2>
+  <p>
+    The requested change policy enforces modern NSA Suite-B cryptographic standards across the fleet:
+  </p>
+  <div class="table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Policy Directive</th>
+          <th>Cryptographic Action</th>
+          <th>Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Prohibit Legacy Ciphers</strong></td>
+          <td>Remove <code>3DES</code>, <code>DES</code>, <code>AES-128-CBC</code></td>
+          <td>Eliminate SWEET32 and downgrade exposure to deprecated symmetric ciphers.</td>
+        </tr>
+        <tr>
+          <td><strong>Enforce AEAD</strong></td>
+          <td>Require <code>AES-256-GCM</code></td>
+          <td>Ensure authenticated encryption and hardware-accelerated wire speed.</td>
+        </tr>
+        <tr>
+          <td><strong>Diffie-Hellman Floor</strong></td>
+          <td>Minimum DH Group <code>19</code> (ECP 256), Prohibit Groups 2, 5, 14</td>
+          <td>Protect against discrete log quantum and classical precomputation attacks.</td>
+        </tr>
+        <tr>
+          <td><strong>Perfect Forward Secrecy</strong></td>
+          <td>Mandatory PFS (Child-SA DH rekey)</td>
+          <td>Guarantee session key isolation across long-lived connections.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 4. Affected Scope -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">4.</span> Affected Scope</h2>
+  <p>
+    Simulation identified <strong>20 endpoints</strong> and <strong>26 tunnels</strong> directly in the blast radius of this proposed change.
+  </p>
+  <p style="font-size: 8pt; color: #64748b;">
+    Directly Affected Endpoints: <code>ep-001, ep-002, ep-003, ep-004, ep-005, ep-006, ep-007, ep-008, ep-009, ep-010, ep-011, ep-012, ep-013, ep-014, ep-015, ep-016, ep-017, ep-018, ep-019, ep-020</code>
+  </p>
+</div>
+
+<div class="report-running-footer">
+  <span>CHANGE-IMPACT ASSESSMENT REPORT &bull; rep-chg-sim-20260929145158-145158</span>
+  <span>Page 2 of 5</span>
+</div>
+
+<!-- ========================================================================
+     PAGE 3: SECTIONS 5 - 8
+     ======================================================================== -->
+<div class="page-break"></div>
+
+<div class="report-running-header">
+  <span class="brand">STATEFLUX</span>
+  <span>IPsec Security Change-Impact Intelligence</span>
+</div>
+
+<!-- 5. Blast Radius -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">5.</span> Blast Radius Quantification</h2>
+  <p>
+    The blast radius is categorized into six mutually exclusive deterministic outcome states across the entire fleet:
+  </p>
+
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="stat-val val-green">10</div>
+      <div class="stat-label">Hardened</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">14</div>
+      <div class="stat-label">Unchanged</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-amber">0</div>
+      <div class="stat-label">Degraded</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-red">7</div>
+      <div class="stat-label">Incompatible</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val val-amber">7</div>
+      <div class="stat-label">Latent Failure</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">2</div>
+      <div class="stat-label">Unknown</div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Security Delta -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">6.</span> Security Delta Analysis</h2>
+  <p>
+    The change improves security posture on <strong>10 tunnels</strong> by moving negotiation floors from legacy CBC/MODP suites to GCM/Curve25519. However, the operational risk is concentrated in the <strong>14 failure tunnels</strong>.
+  </p>
+  <div class="table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Classification</th>
+          <th>Tunnel Count</th>
+          <th>Operational Risk</th>
+          <th>Cryptographic Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-green">HARDENED</span></td>
+          <td><strong>10</strong></td>
+          <td>Zero Risk (Mutually Acceptable)</td>
+          <td>Negotiates Suite-B AES-256-GCM / ECP-384</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-neutral">UNCHANGED</span></td>
+          <td><strong>14</strong></td>
+          <td>Zero Risk (Already Compliant)</td>
+          <td>Already operating at or above target security floor</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-red">INCOMPATIBLE</span></td>
+          <td><strong>7</strong></td>
+          <td>CRITICAL: Immediate Link Failure</td>
+          <td>Peer has no mutually acceptable proposals</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-amber">LATENT_FAILURE</span></td>
+          <td><strong>7</strong></td>
+          <td>HIGH: Delayed Rekey Failure</td>
+          <td>Child-SA active now, fails at next CREATE_CHILD_SA</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 7. Incompatible Tunnels -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">7.</span> Incompatible Tunnels (Immediate Outage)</h2>
+  <p>
+    These tunnels will immediately terminate upon policy application because the remote responder lacks required AES-256-GCM proposals:
+  </p>
+  <div class="table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Tunnel ID</th>
+          <th>Failure Cause</th>
+          <th>Required Action Before Migration</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><code>tn-003</code></td>
+          <td style="color: var(--color-danger);">No mutual proposal: peer only offers AES-128-CBC</td>
+          <td>Update remote endpoint configuration template to include AES-256-GCM</td>
+        </tr>
+        <tr>
+          <td><code>tn-007</code></td>
+          <td style="color: var(--color-danger);">DH mismatch: peer requires MODP-2048 (Group 14)</td>
+          <td>Enable DH Group 19 or 20 on remote peer</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 8. Latent Failure Tunnels -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">8.</span> Latent Failure Tunnels (Delayed Rekey Outage)</h2>
+  <p>
+    These tunnels will establish successfully during initial deployment but will fail upon Child-SA or IKE SA rekey:
+  </p>
+  <div class="table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Tunnel ID</th>
+          <th>Time to Failure (Rekey Window)</th>
+          <th>Deterministic Failure Mechanism</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><code>tn-003</code></td>
+          <td><strong>3600s (1h 0m)s</strong></td>
+          <td>LATENT FAILURE: Current Security Association remains established and traffic continues. However, at next rekey in 3600s (1h 0m), renegotiation will fail because endpoints will share no common proposals under the modified policy.</td>
+        </tr>
+        
+        <tr>
+          <td><code>tn-004</code></td>
+          <td><strong>3600s (1h 0m)s</strong></td>
+          <td>LATENT FAILURE: Current Security Association remains established and traffic continues. However, at next rekey in 3600s (1h 0m), renegotiation will fail because endpoints will share no common proposals under the modified policy.</td>
+        </tr>
+        
+        <tr>
+          <td><code>tn-013</code></td>
+          <td><strong>3600s (1h 0m)s</strong></td>
+          <td>LATENT FAILURE: Current Security Association remains established and traffic continues. However, at next rekey in 3600s (1h 0m), renegotiation will fail because endpoints will share no common proposals under the modified policy.</td>
+        </tr>
+        
+        <tr>
+          <td><code>tn-014</code></td>
+          <td><strong>3600s (1h 0m)s</strong></td>
+          <td>LATENT FAILURE: Current Security Association remains established and traffic continues. However, at next rekey in 3600s (1h 0m), renegotiation will fail because endpoints will share no common proposals under the modified policy.</td>
+        </tr>
+        
+        <tr>
+          <td><code>tn-017</code></td>
+          <td><strong>3600s (1h 0m)s</strong></td>
+          <td>LATENT FAILURE: Current Security Association remains established and traffic continues. However, at next rekey in 3600s (1h 0m), renegotiation will fail because endpoints will share no common proposals under the modified policy.</td>
+        </tr>
+        
+        <tr>
+          <td><code>tn-018</code></td>
+          <td><strong>3600s (1h 0m)s</strong></td>
+          <td>LATENT FAILURE: Current Security Association remains established and traffic continues. However, at next rekey in 3600s (1h 0m), renegotiation will fail because endpoints will share no common proposals under the modified policy.</td>
+        </tr>
+        
+        <tr>
+          <td><code>tn-034</code></td>
+          <td><strong>3600s (1h 0m)s</strong></td>
+          <td>LATENT FAILURE: Current Security Association remains established and traffic continues. However, at next rekey in 3600s (1h 0m), renegotiation will fail because endpoints will share no common proposals under the modified policy.</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="report-running-footer">
+  <span>CHANGE-IMPACT ASSESSMENT REPORT &bull; rep-chg-sim-20260929145158-145158</span>
+  <span>Page 3 of 5</span>
+</div>
+
+<!-- ========================================================================
+     PAGE 4: SECTIONS 9 - 13
+     ======================================================================== -->
+<div class="page-break"></div>
+
+<div class="report-running-header">
+  <span class="brand">STATEFLUX</span>
+  <span>IPsec Security Change-Impact Intelligence</span>
+</div>
+
+<!-- 9. Migration Plan -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">9.</span> Staged Migration Plan (Phased Waves)</h2>
+  <p>
+    To prevent network downtime, STATEFLUX generates an automated phased rollout plan that stages changes by topological criticality:
+  </p>
+  <div class="table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Wave</th>
+          <th>Strategy</th>
+          <th>Tunnels</th>
+          <th>Risk Rating</th>
+          <th>Prerequisite Safeguards</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><strong>WAVE-01 (Canary)</strong></td>
+          <td>Branch Low-Impact Pilot</td>
+          <td>4 tunnels</td>
+          <td><span class="badge badge-green">LOW</span></td>
+          <td>Verify 2 full rekey cycles (120 min) before Wave 2</td>
+        </tr>
+        <tr>
+          <td><strong>WAVE-02 (Regional)</strong></td>
+          <td>Hub-and-Spoke Gateways</td>
+          <td>18 tunnels</td>
+          <td><span class="badge badge-blue">MEDIUM</span></td>
+          <td>Canary wave healthy; telemetry stream confirmed</td>
+        </tr>
+        <tr>
+          <td><strong>WAVE-03 (Core)</strong></td>
+          <td>Core Datacenter Meshes</td>
+          <td>18 tunnels</td>
+          <td><span class="badge badge-amber">HIGH</span></td>
+          <td>Pre-remediated branch templates deployed</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 10. Rollback Strategy -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">10.</span> Rollback Strategy &amp; Safeguards</h2>
+  <div class="exec-summary-box">
+    <div class="box-title">Automated Inverse Rollback Artifacts</div>
+    <ul style="padding-left: 18px; font-size: 8.5pt; color: #334155; line-height: 1.6;">
+      
+      <li>Full inverse rollback plan synthesized per migration wave.</li>
+      
+      <li>Canary stability verification enforced before batch progression.</li>
+      
+      <li>Automated pre-rollback state capture validation.</li>
+      
+    </ul>
+  </div>
+</div>
+
+<!-- 11. Evidence -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">11.</span> Grounded Evidence Verification</h2>
+  <p>
+    Every prediction in this report is anchored to verifiable evidence items in the STATEFLUX Evidence Engine:
+  </p>
+  <div style="font-size: 8pt; color: #475569; background: #f8fafc; padding: 10px; border-radius: 4px; border: 1px solid #e2e8f0;">
+    Anchor Evidence Items: <code>ev-sim-sim-20260929145158</code>, <code>ev-cfg-endpoints</code>, <code>ev-floor-matrix</code>, <code>ev-pcap-baseline</code>.
+  </div>
+</div>
+
+<!-- 12. Validation -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">12.</span> Testbed Empirical Validation</h2>
+  <p>
+    The latent failure prediction mechanisms utilized in this simulation were experimentally proven in <strong>LAB-05</strong>, which validated that uncoordinated cipher pruning preserves active SAs while guaranteeing catastrophic failure at subsequent <code>CREATE_CHILD_SA</code> triggers.
+  </p>
+</div>
+
+<!-- 13. Limitations -->
+<div class="report-section">
+  <h2 class="section-title"><span class="section-num">13.</span> Simulation Limitations &amp; Assumptions</h2>
+  <div class="exec-summary-box alert-box">
+    <p style="color: #78350f; font-size: 8.5pt;">
+      Simulation assumes standard RFC 7296 and RFC 4303 protocol compliance. Proprietary vendor quirks, hardware offload bugs, or intermediary NAT state timeouts are not modeled in baseline simulations. Staged canary rollouts remain strictly mandatory.
+    </p>
+  </div>
+</div>
+
+<div class="report-running-footer">
+  <span>CHANGE-IMPACT ASSESSMENT REPORT &bull; rep-chg-sim-20260929145158-145158</span>
+  <span>Page 4 of 5</span>
+</div>
+
+  </div>
+
+  <script>
+    // Automatically trigger print dialog if requested via ?autoprint=true
+    if (new URLSearchParams(window.location.search).get('autoprint') === 'true') {
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => { window.print(); }, 400);
+      });
+    }
+  </script>
+</body>
+</html>
