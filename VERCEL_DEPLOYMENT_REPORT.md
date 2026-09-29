@@ -70,12 +70,6 @@ A systematic audit revealed four distinct failure vectors that prevented Vercel 
 ```json
 {
   "version": 2,
-  "functions": {
-    "api/index.py": {
-      "includeFiles": "{backend/**,data/**,frontend/**,report_templates/**,report_styles/**}",
-      "excludeFiles": "{backend/tests/**,lab/**,docs/**,scripts/**}"
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
