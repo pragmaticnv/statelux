@@ -85,10 +85,13 @@ _current_dataset: DatasetState = DatasetState()
 def get_dataset() -> DatasetState:
     """Return the currently loaded dataset state.
 
-    Raises:
-        RuntimeError: if the dataset has not been loaded yet.
+    If not yet loaded (e.g. in serverless environments where lifespan may be bypassed),
+    automatically loads from settings.SEED_DIR.
     """
     if not _current_dataset.is_loaded:
+        from app.core.config import settings
+        if settings.SEED_DIR.exists() and any(settings.SEED_DIR.glob("*.json")):
+            return load_dataset(settings.SEED_DIR)
         raise RuntimeError(
             "Dataset has not been loaded. "
             "Call load_dataset(seed_dir) before accessing data."

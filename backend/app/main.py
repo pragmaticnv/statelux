@@ -13,8 +13,9 @@ Startup sequence:
 import logging
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 
 from app.core.config import settings
 from app.services.data_loader import load_dataset
@@ -113,7 +114,10 @@ def create_app() -> FastAPI:
     app.include_router(reports_router,     prefix=prefix)
 
     @app.get("/", include_in_schema=False)
-    async def root():
+    async def root(request: Request):
+        accept = request.headers.get("accept", "")
+        if "text/html" in accept and "application/json" not in accept:
+            return RedirectResponse(url="/ui/", status_code=307)
         return {
             "service": settings.APP_NAME,
             "version": settings.VERSION,

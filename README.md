@@ -602,6 +602,41 @@ Pre-rendered sample reports are available in [`docs/reports/`](docs/reports/).
 
 ---
 
+## Deployment & Execution
+
+### Live Demo
+[https://stateflux.vercel.app](https://stateflux.vercel.app)
+
+> **Serverless Deployment Note:**
+> The Vercel deployment hosts the complete STATEFLUX analysis platform, interactive Command Center, deterministic change simulation engine, and controlled validation results. The strongSwan/Libreswan Docker testbed itself is executed in controlled local/CI container environments and not inside Vercel serverless functions.
+
+### Local Development
+```bash
+# Install dependencies
+pip install -r backend/requirements.txt
+
+# Run local development server
+python run.py
+```
+Open `http://localhost:8000` or `http://localhost:8000/ui/` in your browser.
+
+### Vercel Local Development
+```bash
+vercel dev
+```
+
+### Production Deployment
+```bash
+vercel deploy --prod
+```
+
+### Automated Test Suite
+```bash
+python -m pytest
+```
+
+---
+
 ## Limitations & Safety Scope
 
 - **Controlled Testbed Semantics:** Prediction validation is performed in containerized Linux network namespaces running strongSwan 5.9.8 and Libreswan 4.12 under RFC 7296 (IKEv2) and RFC 4303 (ESP) specifications. Proprietary vendor firmware bugs outside standard protocol definitions are not modeled.

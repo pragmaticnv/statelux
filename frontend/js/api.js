@@ -3,8 +3,8 @@
  * Centralized, typed-like promise-based client for all backend endpoints.
  * Never throws raw unhandled exceptions; returns structured error payloads if offline.
  */
-
-const API_BASE = window.location.origin.includes('8000') || window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1')
+// Same-origin API routing for both Vercel production and local web server
+const API_BASE = (typeof window !== 'undefined' && window.location && window.location.protocol.startsWith('http'))
   ? '/api/v1'
   : 'http://127.0.0.1:8000/api/v1';
 
